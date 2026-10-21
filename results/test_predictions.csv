@@ -1,0 +1,43 @@
+group,model,actual,predicted
+ACWZRVQXLIRSDF,prior,MEK inhibitor,EGFR inhibitor
+BEUQXVWXFDOSAQ,prior,PI3K inhibitor,EGFR inhibitor
+BWDQBBCUWLSASG,prior,HDAC inhibitor,EGFR inhibitor
+GFYRZTLCYQQVHZ,prior,topoisomerase inhibitor,EGFR inhibitor
+HHFBDROWDBDFBR,prior,Aurora kinase inhibitor,EGFR inhibitor
+HXHWSAZORRCQMX,prior,tubulin polymerization inhibitor,EGFR inhibitor
+JWNPDZNEKVCWMY,prior,EGFR inhibitor,EGFR inhibitor
+KAZSKMJFUPEHHW,prior,topoisomerase inhibitor,EGFR inhibitor
+LVXJQMNHJWSHET,prior,EGFR inhibitor,EGFR inhibitor
+SUDAHWBOROXANE,prior,MEK inhibitor,EGFR inhibitor
+VOPDXHFYDJAYNS,prior,HDAC inhibitor,EGFR inhibitor
+XZAFZXJXZHRNAQ,prior,topoisomerase inhibitor,EGFR inhibitor
+ZDZOTLJHXYCWBA,prior,tubulin polymerization inhibitor,EGFR inhibitor
+ZYQXEVJIFYIBHZ,prior,EGFR inhibitor,EGFR inhibitor
+ACWZRVQXLIRSDF,logistic,MEK inhibitor,MEK inhibitor
+BEUQXVWXFDOSAQ,logistic,PI3K inhibitor,MEK inhibitor
+BWDQBBCUWLSASG,logistic,HDAC inhibitor,HDAC inhibitor
+GFYRZTLCYQQVHZ,logistic,topoisomerase inhibitor,MEK inhibitor
+HHFBDROWDBDFBR,logistic,Aurora kinase inhibitor,Aurora kinase inhibitor
+HXHWSAZORRCQMX,logistic,tubulin polymerization inhibitor,tubulin polymerization inhibitor
+JWNPDZNEKVCWMY,logistic,EGFR inhibitor,PI3K inhibitor
+KAZSKMJFUPEHHW,logistic,topoisomerase inhibitor,EGFR inhibitor
+LVXJQMNHJWSHET,logistic,EGFR inhibitor,EGFR inhibitor
+SUDAHWBOROXANE,logistic,MEK inhibitor,MEK inhibitor
+VOPDXHFYDJAYNS,logistic,HDAC inhibitor,PI3K inhibitor
+XZAFZXJXZHRNAQ,logistic,topoisomerase inhibitor,HDAC inhibitor
+ZDZOTLJHXYCWBA,logistic,tubulin polymerization inhibitor,tubulin polymerization inhibitor
+ZYQXEVJIFYIBHZ,logistic,EGFR inhibitor,MEK inhibitor
+ACWZRVQXLIRSDF,random_forest,MEK inhibitor,MEK inhibitor
+BEUQXVWXFDOSAQ,random_forest,PI3K inhibitor,MEK inhibitor
+BWDQBBCUWLSASG,random_forest,HDAC inhibitor,topoisomerase inhibitor
+GFYRZTLCYQQVHZ,random_forest,topoisomerase inhibitor,MEK inhibitor
+HHFBDROWDBDFBR,random_forest,Aurora kinase inhibitor,Aurora kinase inhibitor
+HXHWSAZORRCQMX,random_forest,tubulin polymerization inhibitor,tubulin polymerization inhibitor
+JWNPDZNEKVCWMY,random_forest,EGFR inhibitor,EGFR inhibitor
+KAZSKMJFUPEHHW,random_forest,topoisomerase inhibitor,EGFR inhibitor
+LVXJQMNHJWSHET,random_forest,EGFR inhibitor,EGFR inhibitor
+SUDAHWBOROXANE,random_forest,MEK inhibitor,MEK inhibitor
+VOPDXHFYDJAYNS,random_forest,HDAC inhibitor,MEK inhibitor
+XZAFZXJXZHRNAQ,random_forest,topoisomerase inhibitor,HDAC inhibitor
+ZDZOTLJHXYCWBA,random_forest,tubulin polymerization inhibitor,tubulin polymerization inhibitor
+ZYQXEVJIFYIBHZ,random_forest,EGFR inhibitor,EGFR inhibitor

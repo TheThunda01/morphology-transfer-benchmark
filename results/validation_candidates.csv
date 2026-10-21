@@ -1,0 +1,8 @@
+model,setting,validation_macro_f1
+prior,prior,0.05042016806722689
+logistic,C=0.01,0.4047619047619047
+logistic,C=0.1,0.3761904761904762
+logistic,C=1,0.35714285714285715
+logistic,C=10,0.4816326530612245
+random_forest,depth=2,0.529251700680272
+random_forest,depth=4,0.42380952380952375

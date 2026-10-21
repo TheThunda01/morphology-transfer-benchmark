@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "seed": 27182,
+  "dataset_ref": "061870127481dcd73c29df85ebcfddeac2ed0828",
+  "dataset": "LINCS Pilot1",
+  "cell_line": "A549",
+  "exposure_hours": 48,
+  "dose_recode": 6,
+  "moa_classes": [
+    "tubulin polymerization inhibitor",
+    "topoisomerase inhibitor",
+    "proteasome inhibitor",
+    "HDAC inhibitor",
+    "MEK inhibitor",
+    "EGFR inhibitor",
+    "Aurora kinase inhibitor",
+    "PI3K inhibitor"
+  ],
+  "feature_objects": [
+    "Cells",
+    "Cytoplasm",
+    "Nuclei"
+  ],
+  "shape_measurements": [
+    "Area",
+    "Perimeter",
+    "Compactness",
+    "Eccentricity",
+    "Solidity",
+    "FormFactor",
+    "Extent",
+    "MajorAxisLength",
+    "MinorAxisLength"
+  ],
+  "intensity_measurements": [
+    "MeanIntensity",
+    "MedianIntensity",
+    "StdIntensity"
+  ],
+  "channels": [
+    "DNA",
+    "ER",
+    "RNA",
+    "AGP",
+    "Mito"
+  ],
+  "minimum_compounds_per_class": 6,
+  "minimum_replicates": 3,
+  "maximum_missing_fraction": 0.05,
+  "control_normalization": "per-plate median and MAD, DMSO wells only",
+  "mad_scale": 1.4826,
+  "minimum_controls_per_plate": 12,
+  "validation_fraction": 0.2,
+  "test_fraction": 0.2,
+  "logistic_c": [
+    0.01,
+    0.1,
+    1,
+    10
+  ],
+  "random_forest_depth": [
+    2,
+    4
+  ],
+  "random_forest_trees": 150,
+  "primary_retrieval": "cosine same-MOA retrieval; exclude same InChIKey14 and any shared plate map",
+  "scope": "Eight prespecified annotated mechanisms; not broad MoA or target identification. Neural model not planned: limited independent compounds.",
+  "selected_plate_maps": [
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-001.txt",
+      "name": "C-7161-01-LM6-001",
+      "compounds": [
+        "BRD-K26011976-001-01-0",
+        "BRD-K26603252-003-04-9",
+        "BRD-K60230970-001-10-0",
+        "BRD-K30126819-304-02-7"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-002.txt",
+      "name": "C-7161-01-LM6-002",
+      "compounds": [
+        "BRD-K60230970-001-10-0",
+        "BRD-K17743125-001-08-4"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-003.txt",
+      "name": "C-7161-01-LM6-003",
+      "compounds": [
+        "BRD-K60230970-001-10-0",
+        "BRD-A36331462-001-02-1"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-004.txt",
+      "name": "C-7161-01-LM6-004",
+      "compounds": [
+        "BRD-K19687926-379-07-4",
+        "BRD-K23363278-001-02-1",
+        "BRD-K23677682-003-01-2",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-005.txt",
+      "name": "C-7161-01-LM6-005",
+      "compounds": [
+        "BRD-K08547377-394-03-5",
+        "BRD-K08799216-001-05-3",
+        "BRD-K09426783-300-01-0",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-006.txt",
+      "name": "C-7161-01-LM6-006",
+      "compounds": [
+        "BRD-K21680192-300-14-4",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-007.txt",
+      "name": "C-7161-01-LM6-007",
+      "compounds": [
+        "BRD-K42805893-001-04-9",
+        "BRD-K42191735-001-05-3",
+        "BRD-K52911425-001-09-8",
+        "BRD-K53665955-001-03-0",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-008.txt",
+      "name": "C-7161-01-LM6-008",
+      "compounds": [
+        "BRD-K36740062-001-06-6",
+        "BRD-K31928526-001-02-1",
+        "BRD-K60230970-001-10-0",
+        "BRD-K89561498-001-01-7",
+        "BRD-K89014967-001-04-3"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-009.txt",
+      "name": "C-7161-01-LM6-009",
+      "compounds": [
+        "BRD-K28822270-001-01-1",
+        "BRD-K26667523-001-02-5",
+        "BRD-A28746609-001-11-5",
+        "BRD-K60230970-001-10-0",
+        "BRD-K33610132-001-02-9"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-010.txt",
+      "name": "C-7161-01-LM6-010",
+      "compounds": [
+        "BRD-K12423485-001-01-7",
+        "BRD-K12867552-001-04-7",
+        "BRD-K60230970-001-10-0",
+        "BRD-K14704277-001-22-6",
+        "BRD-K15179879-001-03-2"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-011.txt",
+      "name": "C-7161-01-LM6-011",
+      "compounds": [
+        "BRD-K05104363-001-10-0",
+        "BRD-A05821830-341-01-5",
+        "BRD-K60230970-001-10-0",
+        "BRD-A33280134-001-04-7"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-012.txt",
+      "name": "C-7161-01-LM6-012",
+      "compounds": [
+        "BRD-K60230970-001-10-0",
+        "BRD-K02389548-001-02-5",
+        "BRD-K03390685-001-01-7"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-013.txt",
+      "name": "C-7161-01-LM6-013",
+      "compounds": [
+        "BRD-K37890730-001-15-1",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-014.txt",
+      "name": "C-7161-01-LM6-014",
+      "compounds": [
+        "BRD-K60866521-001-07-1",
+        "BRD-K60230970-001-10-0",
+        "BRD-K59325863-001-02-8",
+        "BRD-K37687095-001-06-9"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-015.txt",
+      "name": "C-7161-01-LM6-015",
+      "compounds": [
+        "BRD-K56334280-001-05-1",
+        "BRD-K56844688-003-01-2",
+        "BRD-K56957086-001-06-3",
+        "BRD-K57080016-001-15-9",
+        "BRD-K57169635-001-04-5",
+        "BRD-K77987382-001-13-2",
+        "BRD-K60230970-001-10-0",
+        "BRD-K61195623-001-01-4",
+        "BRD-K61397605-001-03-4"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-016.txt",
+      "name": "C-7161-01-LM6-016",
+      "compounds": [
+        "BRD-K52313696-001-12-3",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-017.txt",
+      "name": "C-7161-01-LM6-017",
+      "compounds": [
+        "BRD-K50168500-001-07-9",
+        "BRD-K46386702-001-02-1",
+        "BRD-K64538373-001-01-4",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-018.txt",
+      "name": "C-7161-01-LM6-018",
+      "compounds": [
+        "BRD-K64052750-001-17-5",
+        "BRD-K64785675-001-04-0",
+        "BRD-K60230970-001-10-0",
+        "BRD-K66175015-001-09-0",
+        "BRD-K66412701-066-01-6",
+        "BRD-A66419424-001-02-4"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-019.txt",
+      "name": "C-7161-01-LM6-019",
+      "compounds": [
+        "BRD-K44844162-001-01-6",
+        "BRD-K60230970-001-10-0",
+        "BRD-K49215523-001-04-2",
+        "BRD-K49865102-001-08-4"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-020.txt",
+      "name": "C-7161-01-LM6-020",
+      "compounds": [
+        "BRD-K85751432-001-03-3",
+        "BRD-K82928847-001-04-7",
+        "BRD-K45152786-001-08-4",
+        "BRD-K60230970-001-10-0",
+        "BRD-K49456274-001-01-9"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-021.txt",
+      "name": "C-7161-01-LM6-021",
+      "compounds": [
+        "BRD-K80343549-001-02-6",
+        "BRD-K82244583-001-01-3",
+        "BRD-K83963101-001-06-9",
+        "BRD-K83837640-001-04-8",
+        "BRD-K60230970-001-10-0",
+        "BRD-K85606544-001-09-1",
+        "BRD-K86797399-001-04-4"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-022.txt",
+      "name": "C-7161-01-LM6-022",
+      "compounds": [
+        "BRD-K77908580-001-09-6",
+        "BRD-K68747584-001-02-0",
+        "BRD-K70401845-003-09-6",
+        "BRD-K70914287-300-02-8",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-023.txt",
+      "name": "C-7161-01-LM6-023",
+      "compounds": [
+        "BRD-K67102207-236-07-7",
+        "BRD-K68346641-001-02-2",
+        "BRD-K60230970-001-10-0"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-024.txt",
+      "name": "C-7161-01-LM6-024",
+      "compounds": [
+        "BRD-K75295174-001-05-0",
+        "BRD-K60230970-001-10-0",
+        "BRD-K78113049-001-16-2",
+        "BRD-K78567475-001-01-4",
+        "BRD-K78659596-001-03-9"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-025.txt",
+      "name": "C-7161-01-LM6-025",
+      "compounds": [
+        "BRD-K99475619-001-01-2",
+        "BRD-K74057757-001-01-9",
+        "BRD-K60230970-001-10-0",
+        "BRD-K79131256-001-17-9"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-026.txt",
+      "name": "C-7161-01-LM6-026",
+      "compounds": [
+        "BRD-K60230970-001-10-0",
+        "BRD-K92093830-003-30-8"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-027.txt",
+      "name": "C-7161-01-LM6-027",
+      "compounds": [
+        "BRD-K60230970-001-10-0",
+        "BRD-K98572433-001-02-9"
+      ]
+    },
+    {
+      "path": "metadata/platemaps/2016_04_01_a549_48hr_batch1/platemap/C-7161-01-LM6-028.txt",
+      "name": "C-7161-01-LM6-028",
+      "compounds": [
+        "BRD-K95901403-001-04-5",
+        "BRD-K60230970-001-10-0"
+      ]
+    }
+  ]
+}

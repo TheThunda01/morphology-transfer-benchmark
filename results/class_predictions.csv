@@ -1,0 +1,22 @@
+model,moa,test_groups,correct
+prior,tubulin polymerization inhibitor,2,0
+prior,topoisomerase inhibitor,3,0
+prior,HDAC inhibitor,2,0
+prior,MEK inhibitor,2,0
+prior,EGFR inhibitor,3,3
+prior,Aurora kinase inhibitor,1,0
+prior,PI3K inhibitor,1,0
+logistic,tubulin polymerization inhibitor,2,2
+logistic,topoisomerase inhibitor,3,0
+logistic,HDAC inhibitor,2,1
+logistic,MEK inhibitor,2,2
+logistic,EGFR inhibitor,3,1
+logistic,Aurora kinase inhibitor,1,1
+logistic,PI3K inhibitor,1,0
+random_forest,tubulin polymerization inhibitor,2,2
+random_forest,topoisomerase inhibitor,3,0
+random_forest,HDAC inhibitor,2,0
+random_forest,MEK inhibitor,2,2
+random_forest,EGFR inhibitor,3,3
+random_forest,Aurora kinase inhibitor,1,1
+random_forest,PI3K inhibitor,1,0

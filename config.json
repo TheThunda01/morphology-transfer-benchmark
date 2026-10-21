@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "seed": 27182,
+  "dataset_ref": "061870127481dcd73c29df85ebcfddeac2ed0828",
+  "dataset": "LINCS Pilot1",
+  "cell_line": "A549",
+  "exposure_hours": 48,
+  "dose_recode": 6,
+  "moa_classes": [
+    "tubulin polymerization inhibitor",
+    "topoisomerase inhibitor",
+    "proteasome inhibitor",
+    "HDAC inhibitor",
+    "MEK inhibitor",
+    "EGFR inhibitor",
+    "Aurora kinase inhibitor",
+    "PI3K inhibitor"
+  ],
+  "feature_objects": [
+    "Cells",
+    "Cytoplasm",
+    "Nuclei"
+  ],
+  "shape_measurements": [
+    "Area",
+    "Perimeter",
+    "Compactness",
+    "Eccentricity",
+    "Solidity",
+    "FormFactor",
+    "Extent",
+    "MajorAxisLength",
+    "MinorAxisLength"
+  ],
+  "intensity_measurements": [
+    "MeanIntensity",
+    "MedianIntensity",
+    "StdIntensity"
+  ],
+  "channels": [
+    "DNA",
+    "ER",
+    "RNA",
+    "AGP",
+    "Mito"
+  ],
+  "minimum_compounds_per_class": 6,
+  "minimum_replicates": 3,
+  "maximum_missing_fraction": 0.05,
+  "control_normalization": "per-plate median and MAD, DMSO wells only",
+  "mad_scale": 1.4826,
+  "minimum_controls_per_plate": 12,
+  "validation_fraction": 0.2,
+  "test_fraction": 0.2,
+  "logistic_c": [
+    0.01,
+    0.1,
+    1,
+    10
+  ],
+  "random_forest_depth": [
+    2,
+    4
+  ],
+  "random_forest_trees": 150,
+  "primary_retrieval": "cosine same-MOA retrieval; exclude same InChIKey14 and any shared plate map",
+  "scope": "Eight prespecified annotated mechanisms; not broad MoA or target identification. Neural model not planned: limited independent compounds."
+}

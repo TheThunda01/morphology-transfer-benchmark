@@ -1,0 +1,329 @@
+{
+  "search_date": "2026-10-20",
+  "scope": "Rapid implementation-focused review of Cell Painting compound-held-out morphology retrieval, experimental confounding, and public numeric-profile feasibility. This is not a systematic review.",
+  "inclusion_criteria": [
+    "Primary peer-reviewed work directly informing the selected Cell Painting data, interpretation of morphological profiles, or technical variation.",
+    "Official source documentation with explicit provenance, numeric-profile availability, metadata and reuse terms.",
+    "Evidence usable to motivate a limited within-panel benchmark without claiming direct target identification."
+  ],
+  "exclusion_criteria": [
+    "No use of uninspected candidate records as support for scientific claims.",
+    "No assertion of complete abstract or full-text assessment for records outside the three retained papers.",
+    "No raw-image processing or prospective wet-lab implementation in this project.",
+    "Datasets without a sufficiently clear license, tractable numeric profiles or required compound/experimental metadata were not selected."
+  ],
+  "searches": [
+    {
+      "id": "pubmed-bbbc021",
+      "source": "PubMed connector",
+      "query": "BBBC021[Title/Abstract]",
+      "date_limits": {
+        "from": "2013-01-01",
+        "to": "2026-10-20"
+      },
+      "sort": "relevance",
+      "max_results": 20,
+      "offset": 0,
+      "total_results_reported": 1,
+      "returned_count": 1,
+      "retrieved_ids": [
+        "34240099"
+      ]
+    },
+    {
+      "id": "pubmed-cellpainting-page1",
+      "source": "PubMed connector",
+      "query": "\"Cell Painting\"[Title/Abstract] AND (\"mechanism of action\"[Title/Abstract] OR generalization[Title/Abstract])",
+      "date_limits": {
+        "from": "2022-01-01",
+        "to": "2026-10-20"
+      },
+      "sort": "relevance",
+      "max_results": 20,
+      "offset": 0,
+      "total_results_reported": 26,
+      "returned_count": 20,
+      "retrieved_ids": [
+        "39639168",
+        "41402283",
+        "42141265",
+        "39159848",
+        "39175778",
+        "35696676",
+        "40596104",
+        "37490493",
+        "39580445",
+        "39095341",
+        "37044265",
+        "37745478",
+        "36736439",
+        "39257795",
+        "38745696",
+        "38766203",
+        "40459875",
+        "38895267",
+        "42884036",
+        "38585902"
+      ]
+    },
+    {
+      "id": "pubmed-cellpainting-page2",
+      "source": "PubMed connector",
+      "query": "\"Cell Painting\"[Title/Abstract] AND (\"mechanism of action\"[Title/Abstract] OR generalization[Title/Abstract])",
+      "date_limits": {
+        "from": "2022-01-01",
+        "to": "2026-10-20"
+      },
+      "sort": "relevance",
+      "max_results": 20,
+      "offset": 20,
+      "total_results_reported": 26,
+      "returned_count": 6,
+      "retrieved_ids": [
+        "40327316",
+        "39733149",
+        "41167192",
+        "39353851",
+        "38170589",
+        "42450000"
+      ],
+      "note": "Both pages were retrieved; the 26 reported results are covered by these two pages."
+    },
+    {
+      "id": "pubmed-exact-title",
+      "source": "PubMed connector",
+      "query": "\"Comparison of methods for image-based profiling of cellular morphological responses to small-molecule treatment\"[Title]",
+      "date_limits": null,
+      "sort": null,
+      "max_results": 5,
+      "offset": 0,
+      "total_results_reported": 0,
+      "returned_count": 0,
+      "retrieved_ids": [],
+      "limits_note": "No date limits applied; no results returned."
+    },
+    {
+      "id": "pubmed-ljosa",
+      "source": "PubMed connector",
+      "query": "Ljosa[Author] AND profiling[Title]",
+      "date_limits": null,
+      "sort": null,
+      "max_results": 20,
+      "offset": 0,
+      "total_results_reported": 3,
+      "returned_count": 3,
+      "retrieved_ids": [
+        "25024206",
+        "24312513",
+        "24045582"
+      ],
+      "limits_note": "No date limits applied; all three reported records returned."
+    },
+    {
+      "id": "pubmed-way-direct",
+      "source": "PubMed connector direct article retrieval",
+      "query": "36395727",
+      "query_type": "known PMID lookup",
+      "date_limits": null,
+      "total_results_reported": 1,
+      "returned_count": 1,
+      "retrieved_ids": [
+        "36395727"
+      ],
+      "limits_note": "Targeted known-source retrieval, not a discovery query."
+    }
+  ],
+  "supplementary_web_searches": [
+    {
+      "source": "Web search",
+      "query": "BBBC021 numeric profiles data download licence Ljosa 2013",
+      "total_results_reported": null,
+      "retrieved_ids": [],
+      "limits": "Result totals, full rankings and individual result identifiers were not preserved; these queries are not used to calculate a screening denominator."
+    },
+    {
+      "source": "Web search",
+      "query": "site.bbbc.broadinstitute.org license BBBC021",
+      "total_results_reported": null,
+      "retrieved_ids": [],
+      "limits": "Result totals, full rankings and individual result identifiers were not preserved; these queries are not used to calculate a screening denominator."
+    },
+    {
+      "source": "Web search",
+      "query": "BBBC021 profiles.csv github broadinstitute",
+      "total_results_reported": null,
+      "retrieved_ids": [],
+      "limits": "Result totals, full rankings and individual result identifiers were not preserved; these queries are not used to calculate a screening denominator."
+    },
+    {
+      "source": "Web search",
+      "query": "site.github.com/broadinstitute/lincs-cell-painting profiles parquet csv.gz annotated",
+      "total_results_reported": null,
+      "retrieved_ids": [],
+      "limits": "Result totals, full rankings and individual result identifiers were not preserved; these queries are not used to calculate a screening denominator."
+    },
+    {
+      "source": "Web search",
+      "query": "Way 2022 Cell Painting LINCS 1571 compounds morphology transcriptomics mechanism action paper",
+      "total_results_reported": null,
+      "retrieved_ids": [],
+      "limits": "Result totals, full rankings and individual result identifiers were not preserved; these queries are not used to calculate a screening denominator."
+    }
+  ],
+  "screening": {
+    "unique_pubmed_candidates": 31,
+    "unique_pubmed_ids": [
+      "34240099",
+      "39639168",
+      "41402283",
+      "42141265",
+      "39159848",
+      "39175778",
+      "35696676",
+      "40596104",
+      "37490493",
+      "39580445",
+      "39095341",
+      "37044265",
+      "37745478",
+      "36736439",
+      "39257795",
+      "38745696",
+      "38766203",
+      "40459875",
+      "38895267",
+      "42884036",
+      "38585902",
+      "40327316",
+      "39733149",
+      "41167192",
+      "39353851",
+      "38170589",
+      "42450000",
+      "25024206",
+      "24312513",
+      "24045582",
+      "36395727"
+    ],
+    "retained_for_implementation_synthesis": 3,
+    "screening_coverage": "Candidate-level triage for a rapid implementation review. A complete record-by-record abstract quality assessment was not documented and is not claimed.",
+    "retained_records": [
+      {
+        "pmid": "36395727",
+        "doi": "10.1016/j.cels.2022.10.001",
+        "title": "Morphology and gene expression profiling provide complementary information for mapping cell state",
+        "decision": "Retained",
+        "reason": "Primary source study for LINCS morphology data and interpretation, including annotation and experimental-structure limitations.",
+        "access": {
+          "metadata": true,
+          "full_text": "partial excerpt",
+          "characters_inspected": 35000,
+          "reported_full_text_characters": 75826,
+          "complete_article_coverage": false,
+          "complete_supplement_coverage": false
+        },
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36395727/"
+      },
+      {
+        "pmid": "39095341",
+        "doi": "10.1038/s41467-024-50613-5",
+        "title": "Evaluating batch correction methods for image-based cell profiling",
+        "decision": "Retained",
+        "reason": "Primary evidence motivating technical-effect diagnostics and caution about preserving biological information during correction.",
+        "access": {
+          "metadata": true,
+          "full_text": "partial excerpt",
+          "characters_inspected": 26000,
+          "complete_article_coverage": false,
+          "complete_supplement_coverage": false
+        },
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39095341/"
+      },
+      {
+        "pmid": "24312513",
+        "doi": "10.1371/journal.pone.0080999",
+        "title": "Multiplex cytological profiling assay to measure diverse cellular states",
+        "decision": "Retained",
+        "reason": "Primary methodological context for interpreting multiplex morphology as a multivariate cell-state readout.",
+        "access": {
+          "metadata": true,
+          "full_text": "partial excerpt",
+          "characters_inspected": 8000,
+          "complete_article_coverage": false,
+          "complete_supplement_coverage": false
+        },
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24312513/"
+      }
+    ],
+    "not_retained_for_detailed_synthesis": {
+      "count": 28,
+      "pmids": [
+        "34240099",
+        "39639168",
+        "41402283",
+        "42141265",
+        "39159848",
+        "39175778",
+        "35696676",
+        "40596104",
+        "37490493",
+        "39580445",
+        "37044265",
+        "37745478",
+        "36736439",
+        "39257795",
+        "38745696",
+        "38766203",
+        "40459875",
+        "38895267",
+        "42884036",
+        "38585902",
+        "40327316",
+        "39733149",
+        "41167192",
+        "39353851",
+        "38170589",
+        "42450000",
+        "25024206",
+        "24045582"
+      ],
+      "decision": "Not carried into detailed implementation synthesis.",
+      "reason_note": "Individual exclusion reasons were not preserved. Do not interpret this as an eligibility rejection, evidence-quality judgment, or a claim that each abstract/full text was fully reviewed."
+    },
+    "chronology_note": "PMIDs are recorded as returned by the search service. Publication chronology of unretained records was not independently checked; no scientific claims rely on them."
+  },
+  "official_sources_inspected": [
+    {
+      "source": "Broad Institute LINCS Cell Painting repository",
+      "url": "https://github.com/broadinstitute/lincs-cell-painting/tree/061870127481dcd73c29df85ebcfddeac2ed0828",
+      "commit": "061870127481dcd73c29df85ebcfddeac2ed0828",
+      "purpose": "Dataset provenance, license, profile levels, metadata, source object paths and upstream processing workflow.",
+      "decision": "Selected as the numeric-profile source. Upstream raw annotated well medians were used instead of globally spherized or feature-selected profiles.",
+      "limits": "Targeted repository and source-object inspection, not a complete code audit or reproduction of the upstream image-analysis pipeline."
+    },
+    {
+      "source": "Broad Institute Cell Painting Gallery repository",
+      "url": "https://github.com/broadinstitute/cellpainting-gallery/tree/4e878a31d0c730cbe8366a2522c4aab7c599a3ff",
+      "commit": "4e878a31d0c730cbe8366a2522c4aab7c599a3ff",
+      "purpose": "Official dataset collection context and reuse terms.",
+      "decision": "Retained as supporting official documentation.",
+      "limits": "Documentation inspection does not establish performance of this benchmark."
+    }
+  ],
+  "implementation_implications": [
+    "Use an explicitly licensed, pinned source and preserve raw-profile and metadata hashes.",
+    "Separate repeated wells from independent related-compound groups.",
+    "Declare annotation, dose, replicate and class-support exclusions before scoring.",
+    "Fit predictive transformations on training compound profiles; use same-plate DMSO controls for the declared normalization procedure.",
+    "Expose technical-effect diagnostics and remove shared plate-map references in the primary retrieval task.",
+    "Report ineligible queries, small denominators, simple baselines and restricted within-panel interpretation.",
+    "Do not claim that literature validates the fixed thresholds or that a same-annotation match proves target engagement."
+  ],
+  "review_limits": [
+    "Single-pass rapid review, not registered or systematic; no duplicate screening or formal risk-of-bias assessment.",
+    "Three retained primary papers were inspected only in partial full-text excerpts; full articles and supplements were not covered.",
+    "Supplementary web result counts and per-record exclusion reasons were not preserved.",
+    "No exhaustive forward/backward citation search, comparison of all datasets, or independent biological validation.",
+    "The selected small fixed panel does not establish generalization to unseen cell types, doses, laboratories or molecular mechanisms."
+  ]
+}

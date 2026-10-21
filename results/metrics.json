@@ -1,0 +1,161 @@
+{
+  "scope": "Within a prespecified mechanism panel after documented support exclusions; no target or efficacy inference",
+  "source_sha256": "d2532b2484275a5c961caad3cbc77dc3072d77c02b9fbca6325b8bb91b3e9dbf",
+  "config_sha256": "b5ded50b798f8ae5fc1ce3a1ef3e9b141523cfddbf67895153634ef97199a9cb",
+  "source_rows": 3674,
+  "compound_groups": 76,
+  "input_features": 72,
+  "training_features": 72,
+  "split_counts": {
+    "train": 48,
+    "validation": 14,
+    "test": 14
+  },
+  "support": [
+    {
+      "moa": "tubulin polymerization inhibitor",
+      "available_groups": 10,
+      "status": "included",
+      "train": 6,
+      "validation": 2,
+      "test": 2
+    },
+    {
+      "moa": "topoisomerase inhibitor",
+      "available_groups": 15,
+      "status": "included",
+      "train": 9,
+      "validation": 3,
+      "test": 3
+    },
+    {
+      "moa": "proteasome inhibitor",
+      "available_groups": 5,
+      "status": "insufficient_class_support",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "moa": "HDAC inhibitor",
+      "available_groups": 12,
+      "status": "included",
+      "train": 8,
+      "validation": 2,
+      "test": 2
+    },
+    {
+      "moa": "MEK inhibitor",
+      "available_groups": 10,
+      "status": "included",
+      "train": 6,
+      "validation": 2,
+      "test": 2
+    },
+    {
+      "moa": "EGFR inhibitor",
+      "available_groups": 15,
+      "status": "included",
+      "train": 9,
+      "validation": 3,
+      "test": 3
+    },
+    {
+      "moa": "Aurora kinase inhibitor",
+      "available_groups": 6,
+      "status": "included",
+      "train": 4,
+      "validation": 1,
+      "test": 1
+    },
+    {
+      "moa": "PI3K inhibitor",
+      "available_groups": 8,
+      "status": "included",
+      "train": 6,
+      "validation": 1,
+      "test": 1
+    }
+  ],
+  "requested_moa_classes": [
+    "tubulin polymerization inhibitor",
+    "topoisomerase inhibitor",
+    "proteasome inhibitor",
+    "HDAC inhibitor",
+    "MEK inhibitor",
+    "EGFR inhibitor",
+    "Aurora kinase inhibitor",
+    "PI3K inhibitor"
+  ],
+  "included_moa_classes": [
+    "tubulin polymerization inhibitor",
+    "topoisomerase inhibitor",
+    "HDAC inhibitor",
+    "MEK inhibitor",
+    "EGFR inhibitor",
+    "Aurora kinase inhibitor",
+    "PI3K inhibitor"
+  ],
+  "accuracy_change_per_one_test_group": 0.07142857142857142,
+  "shared_train_test_plate_maps": [
+    "C-7161-01-LM6-001",
+    "C-7161-01-LM6-004",
+    "C-7161-01-LM6-011",
+    "C-7161-01-LM6-015",
+    "C-7161-01-LM6-019",
+    "C-7161-01-LM6-020",
+    "C-7161-01-LM6-021",
+    "C-7161-01-LM6-025"
+  ],
+  "control_diagnostic_note": "Global control median/MAD is used only to describe plate shifts; predictive transformations use plate-local DMSO controls then training groups.",
+  "retrieval": {
+    "queries": 14,
+    "eligible_queries": 14,
+    "ineligible_queries": 0,
+    "mean_average_precision": 0.46254894098363664,
+    "random_mean_average_precision": 0.22351534294006514,
+    "top1_accuracy": 0.5714285714285714,
+    "mean_ap_bootstrap95": [
+      0.3374667051981464,
+      0.592707074654513
+    ]
+  },
+  "classification": [
+    {
+      "model": "prior",
+      "setting": "prior",
+      "test_compounds": 14,
+      "accuracy": 0.21428571428571427,
+      "balanced_accuracy": 0.14285714285714285,
+      "macro_f1": 0.05042016806722689,
+      "accuracy_bootstrap95_low": 0.0,
+      "accuracy_bootstrap95_high": 0.42857142857142855
+    },
+    {
+      "model": "logistic",
+      "setting": "C=10",
+      "test_compounds": 14,
+      "accuracy": 0.5,
+      "balanced_accuracy": 0.5476190476190476,
+      "macro_f1": 0.4959183673469387,
+      "accuracy_bootstrap95_low": 0.21428571428571427,
+      "accuracy_bootstrap95_high": 0.7857142857142857
+    },
+    {
+      "model": "random_forest",
+      "setting": "depth=2",
+      "test_compounds": 14,
+      "accuracy": 0.5714285714285714,
+      "balanced_accuracy": 0.5714285714285714,
+      "macro_f1": 0.4897959183673469,
+      "accuracy_bootstrap95_low": 0.2857142857142857,
+      "accuracy_bootstrap95_high": 0.7874999999999902
+    }
+  ],
+  "neural_model": "Not fitted: only a small number of independent compounds per class",
+  "normalization": "DMSO-only plate median/MAD; all subsequent feature selection, imputation and scaling fitted on training compound groups",
+  "upstream_dose_field": "Metadata_mmoles_per_liter; name conflicts with micromolar doses in source publication, so values are retained as source values without silent unit conversion",
+  "selected_dose_values": [
+    "10"
+  ]
+}

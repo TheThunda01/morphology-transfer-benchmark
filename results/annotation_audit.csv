@@ -1,0 +1,84 @@
+group,compound,moa,status
+ZDZOTLJHXYCWBA,docetaxel,tubulin polymerization inhibitor,eligible
+RCINICONZNJXQF,paclitaxel,tubulin polymerization inhibitor,eligible
+VJJPUSNTGOMMGY,etoposide,topoisomerase inhibitor,eligible
+SWZXEVABPLUDIO,oprozomib,proteasome inhibitor,insufficient_class_support
+YTXSYWAKVMZICI,ixazomib-citrate,proteasome inhibitor,insufficient_class_support
+VOPDXHFYDJAYNS,RG2833,HDAC inhibitor,eligible
+BSMCAPRUBJMWDF,cobimetinib,MEK inhibitor,eligible
+GFMMXOIFOQCCGU,PD-184352,MEK inhibitor,eligible
+UWKQSNNFCGGAFS,irinotecan,topoisomerase inhibitor,eligible
+WVUNYSQLFKLYNI,pelitinib,EGFR inhibitor,eligible
+ROWSTIYZUWEOMM,TAS-103,topoisomerase inhibitor,eligible
+DDUHZTYCFQRHIY,griseofulvin,tubulin polymerization inhibitor,eligible
+MAUCONCHVWBMHK,PCI-24781,HDAC inhibitor,eligible
+VDUWPHTZYNWKRN,cinoxacin,topoisomerase inhibitor,eligible
+BLMPQMFVWMYDKT,carfilzomib,proteasome inhibitor,insufficient_class_support
+NCNRHFGMJRPRSK,belinostat,HDAC inhibitor,eligible
+BCFGMOOMADDAQU,lapatinib,EGFR inhibitor,eligible
+KKZJGLLVHKMTCM,mitoxantrone,topoisomerase inhibitor,eligible
+MTJHLONVHHPNSI,CYT-997,tubulin polymerization inhibitor,eligible
+XZAFZXJXZHRNAQ,voreloxin,topoisomerase inhibitor,eligible
+KAZSKMJFUPEHHW,licochalcone-A,topoisomerase inhibitor,eligible
+LSPANGZZENHZNJ,PD-153035,EGFR inhibitor,eligible
+RCLQNICOARASSR,TAK-733,MEK inhibitor,eligible
+FECGNJPYVFEKOD,resminostat,HDAC inhibitor,eligible
+BYUKOOOZTSTOOH,dimesna,tubulin polymerization inhibitor,eligible
+GBJVVSCPOBPEIT,barasertib,Aurora kinase inhibitor,eligible
+HUFOZJXAKZVRNJ,rociletinib,EGFR inhibitor,eligible
+QTBWCSQGBMPECM,GSK1070916,Aurora kinase inhibitor,eligible
+RWEVIPRMPFNTLO,AZD8330,MEK inhibitor,eligible
+VSJKWCGYPAHWDS,camptothecin,topoisomerase inhibitor,too_few_distinct_replicate_plates
+CWHUFRVAEUJCEF,buparlisib,PI3K inhibitor,eligible
+DUYJMQONPNNFPI,osimertinib,EGFR inhibitor,eligible
+BEUQXVWXFDOSAQ,taselisib,PI3K inhibitor,eligible
+GFYRZTLCYQQVHZ,merbarone,topoisomerase inhibitor,eligible
+UWXSAYUXVSFDBQ,ARRY-334543,EGFR inhibitor,eligible
+XTKLTGBKIDQGQL,GSK2636771,PI3K inhibitor,eligible
+QINPEPAQOBZPOF,pilaralisib,PI3K inhibitor,eligible
+SUDAHWBOROXANE,PD-0325901,MEK inhibitor,eligible
+OMZCMEYTWSXEPZ,canertinib,EGFR inhibitor,eligible
+VAZAPHZUAVEOMC,tacedinaline,HDAC inhibitor,eligible
+LHNIIDJUOCFXAP,GDC-0941,PI3K inhibitor,eligible
+LCVIRAZGMYMNNT,MK-5108,Aurora kinase inhibitor,eligible
+UPALIKSFLSVKIS,amonafide,topoisomerase inhibitor,eligible
+AOJJSUZBOXZQNB,doxorubicin,topoisomerase inhibitor,eligible
+BWDQBBCUWLSASG,dacinostat,HDAC inhibitor,eligible
+CYOHGALHFOKKQC,selumetinib,MEK inhibitor,eligible
+LVXJQMNHJWSHET,dacomitinib,EGFR inhibitor,eligible
+SJFBTAPEPRWNKH,delanzomib,proteasome inhibitor,insufficient_class_support
+TZYWCYJVHRLUCT,MG-132,proteasome inhibitor,absent_from_selected_dose_snapshot
+IFSDAJWBUCMOAH,idelalisib,PI3K inhibitor,eligible
+HVXBOLULGPECHP,combretastatin-A-4,tubulin polymerization inhibitor,eligible
+OHRURASPPZQGQM,romidepsin,HDAC inhibitor,eligible
+XGALLCVXEZPNRQ,gefitinib,EGFR inhibitor,eligible
+FIMYFEGKMOCQKT,Ro-4987655,MEK inhibitor,eligible
+UJIAQDJKSXQLIT,TG100-115,PI3K inhibitor,eligible
+ULXXDDBFHOBEHA,afatinib,EGFR inhibitor,eligible
+XAGMUUZPGZWTRP,pazufloxacin,topoisomerase inhibitor,eligible
+OBKXEAXTFZPCHS,phenylbutyrate,HDAC inhibitor,eligible
+XCPGHVQEEXUHNC,amsacrine,topoisomerase inhibitor,eligible
+RYYNGWLOYLRZLK,PF-03814735,Aurora kinase inhibitor,eligible
+AAKJLRGGTJKAMG,erlotinib,EGFR inhibitor,eligible
+FTFRZXFNZVCRSK,BIBX-1382,EGFR inhibitor,eligible
+SOLIIYNRSAWTSQ,indibulin,tubulin polymerization inhibitor,eligible
+ZLHFILGSQDJULK,alisertib,Aurora kinase inhibitor,eligible
+INVTYAOGFAGBOE,entinostat,HDAC inhibitor,eligible
+OPXLLQIJSORQAM,mebendazole,tubulin polymerization inhibitor,eligible
+IDYZIJYBMGIQMJ,enoxacin,topoisomerase inhibitor,eligible
+OFDNQWIFNXBECV,dolastatin-10,tubulin polymerization inhibitor,eligible
+MXAYKZJJDUDWDS,ixazomib,proteasome inhibitor,insufficient_class_support
+HXHWSAZORRCQMX,albendazole,tubulin polymerization inhibitor,eligible
+ZYQXEVJIFYIBHZ,TAK-285,EGFR inhibitor,eligible
+ACWZRVQXLIRSDF,binimetinib,MEK inhibitor,eligible
+QGZYDVAGYRLSKP,ACY-1215,HDAC inhibitor,eligible
+PAWIYAYFNXQGAP,JNJ-26481585,HDAC inhibitor,eligible
+HHFBDROWDBDFBR,MLN8054,Aurora kinase inhibitor,eligible
+JWNPDZNEKVCWMY,neratinib,EGFR inhibitor,eligible
+RDSACQWTXKSHJT,refametinib,MEK inhibitor,eligible
+JHDKZFFAIZKUCU,SB-939,HDAC inhibitor,eligible
+VIUAUNHCRHHYNE,AS-703026,MEK inhibitor,eligible
+FJHBVJOVLFPMQE,SN-38,topoisomerase inhibitor,eligible
+MQMKRQLTIWPEDM,XL147,PI3K inhibitor,eligible
+DFJSJLGUIXFDJP,AZD8931,EGFR inhibitor,eligible
+BAORCAMWLWRZQG,genz-644282,topoisomerase inhibitor,eligible

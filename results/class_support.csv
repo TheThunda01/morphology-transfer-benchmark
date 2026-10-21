@@ -1,0 +1,9 @@
+moa,available_groups,status,train,validation,test
+tubulin polymerization inhibitor,10,included,6,2,2
+topoisomerase inhibitor,15,included,9,3,3
+proteasome inhibitor,5,insufficient_class_support,0,0,0
+HDAC inhibitor,12,included,8,2,2
+MEK inhibitor,10,included,6,2,2
+EGFR inhibitor,15,included,9,3,3
+Aurora kinase inhibitor,6,included,4,1,1
+PI3K inhibitor,8,included,6,1,1

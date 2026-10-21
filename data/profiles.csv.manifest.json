@@ -1,0 +1,1045 @@
+{
+  "source": "Broad LINCS Cell Painting Pilot1; Level3 annotated well medians",
+  "source_commit": "061870127481dcd73c29df85ebcfddeac2ed0828",
+  "source_license": "CC0-1.0",
+  "captured_utc": "2026-10-20T20:53:17.604501+00:00",
+  "source_directory_md5": "856a0e07b38c2cdeae7822b80d8f8ee9",
+  "snapshot_sha256": "d2532b2484275a5c961caad3cbc77dc3072d77c02b9fbca6325b8bb91b3e9dbf",
+  "snapshot_bytes": 871144,
+  "rows": 3674,
+  "numeric_features": 72,
+  "selection": {
+    "schema_version": "1.0",
+    "seed": 27182,
+    "dataset_ref": "061870127481dcd73c29df85ebcfddeac2ed0828",
+    "dataset": "LINCS Pilot1",
+    "cell_line": "A549",
+    "exposure_hours": 48,
+    "dose_recode": 6,
+    "moa_classes": [
+      "tubulin polymerization inhibitor",
+      "topoisomerase inhibitor",
+      "proteasome inhibitor",
+      "HDAC inhibitor",
+      "MEK inhibitor",
+      "EGFR inhibitor",
+      "Aurora kinase inhibitor",
+      "PI3K inhibitor"
+    ],
+    "feature_objects": [
+      "Cells",
+      "Cytoplasm",
+      "Nuclei"
+    ],
+    "shape_measurements": [
+      "Area",
+      "Perimeter",
+      "Compactness",
+      "Eccentricity",
+      "Solidity",
+      "FormFactor",
+      "Extent",
+      "MajorAxisLength",
+      "MinorAxisLength"
+    ],
+    "intensity_measurements": [
+      "MeanIntensity",
+      "MedianIntensity",
+      "StdIntensity"
+    ],
+    "channels": [
+      "DNA",
+      "ER",
+      "RNA",
+      "AGP",
+      "Mito"
+    ],
+    "minimum_compounds_per_class": 6,
+    "minimum_replicates": 3,
+    "maximum_missing_fraction": 0.05,
+    "control_normalization": "per-plate median and MAD, DMSO wells only",
+    "mad_scale": 1.4826,
+    "minimum_controls_per_plate": 12,
+    "validation_fraction": 0.2,
+    "test_fraction": 0.2,
+    "logistic_c": [
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "random_forest_depth": [
+      2,
+      4
+    ],
+    "random_forest_trees": 150,
+    "primary_retrieval": "cosine same-MOA retrieval; exclude same InChIKey14 and any shared plate map",
+    "scope": "Eight prespecified annotated mechanisms; not broad MoA or target identification. Neural model not planned: limited independent compounds."
+  },
+  "filter_counts": {
+    "upstream_rows": 52223,
+    "controls_retained": 3264,
+    "treatment_rows_at_selected_dose": 7568,
+    "outside_panel_at_dose": 5910,
+    "other_dose_or_role": 41391,
+    "panel_treatments_retained": 410,
+    "multiple_moa_at_dose": 1006,
+    "missing_moa_at_dose": 242
+  },
+  "source_objects": [
+    {
+      "upstream_path": "SQ00014812/SQ00014812_augmented.csv.gz",
+      "md5": "7bbd2ea1af6aa0a67232a8872b8859e6",
+      "sha256": "9511761ce28f755220bd2b6380fe369bdfe630285872ce8747023179199232c2",
+      "bytes": 2060617,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7b/bd2ea1af6aa0a67232a8872b8859e6"
+    },
+    {
+      "upstream_path": "SQ00014813/SQ00014813_augmented.csv.gz",
+      "md5": "7f641b36c97ac04718ba74da59b7e062",
+      "sha256": "b820d6d2f700e676ec865e5b296943f4a289e448ea9a20175727281dd0270b82",
+      "bytes": 2060420,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7f/641b36c97ac04718ba74da59b7e062"
+    },
+    {
+      "upstream_path": "SQ00014814/SQ00014814_augmented.csv.gz",
+      "md5": "908a76ccdc7284fba66f8f8bf622cc40",
+      "sha256": "e0b7ef63ba4832db86be3ae6532578e7c3933de42574ef2573b050fbba9d1671",
+      "bytes": 2058546,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/90/8a76ccdc7284fba66f8f8bf622cc40"
+    },
+    {
+      "upstream_path": "SQ00014815/SQ00014815_augmented.csv.gz",
+      "md5": "ea0cf2ecc11ede9afe7e7fc7a309f1ec",
+      "sha256": "3105ded6e8503e879ae4cfc60b12417a31183983e26c84561c14925e7dd69699",
+      "bytes": 2060884,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ea/0cf2ecc11ede9afe7e7fc7a309f1ec"
+    },
+    {
+      "upstream_path": "SQ00014816/SQ00014816_augmented.csv.gz",
+      "md5": "92db24a26bfca091b4d8e40efaf0e98c",
+      "sha256": "8767cab0d6d5e27c91aecc479036d7fb4197d18e6cb21dfe97ae2223145932d8",
+      "bytes": 2056243,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/92/db24a26bfca091b4d8e40efaf0e98c"
+    },
+    {
+      "upstream_path": "SQ00014817/SQ00014817_augmented.csv.gz",
+      "md5": "30e9c062c6ec24a7fad5f2142a8847fb",
+      "sha256": "a320cdf04109eee63e047b6349545824e854c77bcbad7ea460e54c4d5fa3da35",
+      "bytes": 2054880,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/30/e9c062c6ec24a7fad5f2142a8847fb"
+    },
+    {
+      "upstream_path": "SQ00014818/SQ00014818_augmented.csv.gz",
+      "md5": "20d978b8abd604cd6f2a995d0d37ad18",
+      "sha256": "924c20e1bb952a00c4d1eac812aba26cef847c7ab6692c8e903b0ea6b52faa7c",
+      "bytes": 2058266,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/20/d978b8abd604cd6f2a995d0d37ad18"
+    },
+    {
+      "upstream_path": "SQ00014819/SQ00014819_augmented.csv.gz",
+      "md5": "6ae361b0bb33118e7c3b88b24914b12f",
+      "sha256": "40414de257bdf4a8d9e645173bf83a2705742498e7a0bda2a9ac699eb8b6257e",
+      "bytes": 2055879,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/6a/e361b0bb33118e7c3b88b24914b12f"
+    },
+    {
+      "upstream_path": "SQ00014820/SQ00014820_augmented.csv.gz",
+      "md5": "b1e6cb4fd82a6872967bfbed2309ac9a",
+      "sha256": "dadfb3794a6ffdba533e501e618d99cd560a5830b805b2a63abb59125c8d72fb",
+      "bytes": 2059614,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/b1/e6cb4fd82a6872967bfbed2309ac9a"
+    },
+    {
+      "upstream_path": "SQ00015041/SQ00015041_augmented.csv.gz",
+      "md5": "213c9c9de6b0912cd6a3bc2d81c3e147",
+      "sha256": "9b925127bba6b0b19f5b7ba6c072dca5de9cec8ef1b5d8260916d7f39baf6cd4",
+      "bytes": 2069124,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/21/3c9c9de6b0912cd6a3bc2d81c3e147"
+    },
+    {
+      "upstream_path": "SQ00015042/SQ00015042_augmented.csv.gz",
+      "md5": "3c7639d78d21f4960c449baa017a4fcd",
+      "sha256": "a1cde802aafcea1e88f1529325f6f5bf992a6e38f860799f5117c2c1a6894c16",
+      "bytes": 2059146,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/3c/7639d78d21f4960c449baa017a4fcd"
+    },
+    {
+      "upstream_path": "SQ00015043/SQ00015043_augmented.csv.gz",
+      "md5": "23e521fb5bb6086edd0e691dc6ca8445",
+      "sha256": "a8b6a10743cc4620314c51c7a85d6aedfcba959577dfbba982095d70b184a0c0",
+      "bytes": 2059624,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/23/e521fb5bb6086edd0e691dc6ca8445"
+    },
+    {
+      "upstream_path": "SQ00015044/SQ00015044_augmented.csv.gz",
+      "md5": "c98c0c59171f6e2a48a073eb9726de38",
+      "sha256": "c1c3bba9c5a107fd940b609b6a370185af60556077997a496403556b0d2459d9",
+      "bytes": 2058287,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c9/8c0c59171f6e2a48a073eb9726de38"
+    },
+    {
+      "upstream_path": "SQ00015045/SQ00015045_augmented.csv.gz",
+      "md5": "44a91d14a62c62ba96d00486c8089039",
+      "sha256": "1ddf20129e33dc5cf627a55f5206a61f443c2b6d9e856e9be89eb9c51e52bee8",
+      "bytes": 2056189,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/44/a91d14a62c62ba96d00486c8089039"
+    },
+    {
+      "upstream_path": "SQ00015046/SQ00015046_augmented.csv.gz",
+      "md5": "cd3c5ccc05d52058ae7df1cafb74e3af",
+      "sha256": "7bd5c00525feec6809bf700d3f59ba06e640359d9d5177d279e30aae46305016",
+      "bytes": 2055854,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/cd/3c5ccc05d52058ae7df1cafb74e3af"
+    },
+    {
+      "upstream_path": "SQ00015047/SQ00015047_augmented.csv.gz",
+      "md5": "9b0e14532fa1e6546d31d89a44385bef",
+      "sha256": "cb01f91e8df8bd017f5e2074cbfcb4311bdd1b32da3b5ca46adfc3f31c4cd2b9",
+      "bytes": 2055529,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/9b/0e14532fa1e6546d31d89a44385bef"
+    },
+    {
+      "upstream_path": "SQ00015048/SQ00015048_augmented.csv.gz",
+      "md5": "c5605232ae644d17768eb28032ef2ba3",
+      "sha256": "743845eac1edf5b280033d00312919c673f34d5029b922fa95449867efcc9913",
+      "bytes": 2056824,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c5/605232ae644d17768eb28032ef2ba3"
+    },
+    {
+      "upstream_path": "SQ00015049/SQ00015049_augmented.csv.gz",
+      "md5": "314a01bcd5363f51bd13cfea07691469",
+      "sha256": "c40a9766f32b61e09b4589053132c5c6e2f95f6291f6b801069ab6cc95ed281b",
+      "bytes": 2054167,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/31/4a01bcd5363f51bd13cfea07691469"
+    },
+    {
+      "upstream_path": "SQ00015050/SQ00015050_augmented.csv.gz",
+      "md5": "0b25f81f44fefddfb65d7b47d57d42f8",
+      "sha256": "3e17ce84fc577e0b5226a32f1c1c0555fa63acbaa514c126fc6d7b95abc17697",
+      "bytes": 2055727,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/0b/25f81f44fefddfb65d7b47d57d42f8"
+    },
+    {
+      "upstream_path": "SQ00015051/SQ00015051_augmented.csv.gz",
+      "md5": "9e0894ec7b946a7d7f977dd36ec4be1b",
+      "sha256": "7223dbba84215672adec82e716cdc52ef399e0eb0f106333a086cbfef619c17e",
+      "bytes": 2054571,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/9e/0894ec7b946a7d7f977dd36ec4be1b"
+    },
+    {
+      "upstream_path": "SQ00015052/SQ00015052_augmented.csv.gz",
+      "md5": "096ffa30b9fa94b87a943480dbd92bc8",
+      "sha256": "fadce74bcef2579d0fdc22af9a6345b65e00c16c330219b0efa500a25e072fc6",
+      "bytes": 2055826,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/09/6ffa30b9fa94b87a943480dbd92bc8"
+    },
+    {
+      "upstream_path": "SQ00015053/SQ00015053_augmented.csv.gz",
+      "md5": "7ecd0c1001c806652585beb184189cde",
+      "sha256": "7a1c2769d4cd8fe19702e52401e2e006f3e482fc3aee9c9683f4869d577a2383",
+      "bytes": 2056754,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7e/cd0c1001c806652585beb184189cde"
+    },
+    {
+      "upstream_path": "SQ00015054/SQ00015054_augmented.csv.gz",
+      "md5": "f06bef9f04a8234452ed9a6eb623e5b9",
+      "sha256": "14fc37c424a3dee9cd167b5feda88ad40a52b942d20c3113ef7f43ed66071ae2",
+      "bytes": 2056792,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/f0/6bef9f04a8234452ed9a6eb623e5b9"
+    },
+    {
+      "upstream_path": "SQ00015055/SQ00015055_augmented.csv.gz",
+      "md5": "7ae1df06391718d69ca71a70c69dff83",
+      "sha256": "3eb79bf1f81b5c48f1fc95d48b0882cdbb4c742983de65a03b99f7856a9a1f33",
+      "bytes": 2056493,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7a/e1df06391718d69ca71a70c69dff83"
+    },
+    {
+      "upstream_path": "SQ00015056/SQ00015056_augmented.csv.gz",
+      "md5": "91e1e2f9e2dfad1c3bba27b5b8e9741e",
+      "sha256": "35a9cf2da1baab1fbfbd06777314654a2a206befd1cb45c21a9a4e2f1d1097cd",
+      "bytes": 2060589,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/91/e1e2f9e2dfad1c3bba27b5b8e9741e"
+    },
+    {
+      "upstream_path": "SQ00015057/SQ00015057_augmented.csv.gz",
+      "md5": "b4d5e4e032e428fb7167c84a68c1b842",
+      "sha256": "0f72ab75184d517af10c019b6fb3afe316470c2c78d031a6cc09dc032d1e6152",
+      "bytes": 2059402,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/b4/d5e4e032e428fb7167c84a68c1b842"
+    },
+    {
+      "upstream_path": "SQ00015058/SQ00015058_augmented.csv.gz",
+      "md5": "558fb800c7c7eff8f3f0f37ad2e80c38",
+      "sha256": "a64d9ddfb1eb465e45410029ee53fa55d691dc8ab690544be76304adea053fcd",
+      "bytes": 2057611,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/55/8fb800c7c7eff8f3f0f37ad2e80c38"
+    },
+    {
+      "upstream_path": "SQ00015059/SQ00015059_augmented.csv.gz",
+      "md5": "ca5785a8b4c0a6c506ac45bede198ffb",
+      "sha256": "1820cc3334d2d80268d0a2dcfe248867ed50bb39a76d636992938c46ce48f9cb",
+      "bytes": 2055506,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ca/5785a8b4c0a6c506ac45bede198ffb"
+    },
+    {
+      "upstream_path": "SQ00015096/SQ00015096_augmented.csv.gz",
+      "md5": "32d3d10656f34bc6b9e77fdbb1dbf861",
+      "sha256": "3ea4932a0bf1d81040730dc3c7dd24fa49a002dd0d1f28c6c058c4735e945311",
+      "bytes": 2059625,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/32/d3d10656f34bc6b9e77fdbb1dbf861"
+    },
+    {
+      "upstream_path": "SQ00015097/SQ00015097_augmented.csv.gz",
+      "md5": "5ec93d203626902fee8ab6ba08e27f62",
+      "sha256": "e87c2463c51ecc268e1006f9c108a6489ff503c8b780c3968cb2d144e0e1670e",
+      "bytes": 2060277,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/5e/c93d203626902fee8ab6ba08e27f62"
+    },
+    {
+      "upstream_path": "SQ00015098/SQ00015098_augmented.csv.gz",
+      "md5": "6124950040365f4ab0893119aefe45c6",
+      "sha256": "e6849cef7c495d8535506ebc2441cebe8b851a54f784dff52975566be28f65b5",
+      "bytes": 2061950,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/61/24950040365f4ab0893119aefe45c6"
+    },
+    {
+      "upstream_path": "SQ00015099/SQ00015099_augmented.csv.gz",
+      "md5": "ca95d11e447953ddfa3e4966117e8513",
+      "sha256": "46f9547778c4efb8bb38868668923c9d50e4d5c05693810aeef97402c051e176",
+      "bytes": 2060880,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ca/95d11e447953ddfa3e4966117e8513"
+    },
+    {
+      "upstream_path": "SQ00015100/SQ00015100_augmented.csv.gz",
+      "md5": "6e86dd09cabc2b3dfa25682ce883c775",
+      "sha256": "2014716eec82422e082196400debd4711922540c177116ccbfc4e1231dca4720",
+      "bytes": 2053133,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/6e/86dd09cabc2b3dfa25682ce883c775"
+    },
+    {
+      "upstream_path": "SQ00015101/SQ00015101_augmented.csv.gz",
+      "md5": "35a766aae273f07161ae84bdc69a22d5",
+      "sha256": "e11a30d79a60cb94926c2d319e463b4f6958c6ba5e2a77d6190e22d0fbb66f91",
+      "bytes": 2052298,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/35/a766aae273f07161ae84bdc69a22d5"
+    },
+    {
+      "upstream_path": "SQ00015102/SQ00015102_augmented.csv.gz",
+      "md5": "e23b85daf054fda4131ce5b248a32c5a",
+      "sha256": "1cd1771ea9c7597ad51180e968a60d1bc63035c7e267fa6e26d618dd28c912d0",
+      "bytes": 2052459,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/e2/3b85daf054fda4131ce5b248a32c5a"
+    },
+    {
+      "upstream_path": "SQ00015103/SQ00015103_augmented.csv.gz",
+      "md5": "703584c64c8c59b3a5feffa468c0e220",
+      "sha256": "e645c7c953f479cd6d1d327478c972418de388bd8c7d1ac0dfe29b9fc44d7e1c",
+      "bytes": 2051172,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/70/3584c64c8c59b3a5feffa468c0e220"
+    },
+    {
+      "upstream_path": "SQ00015105/SQ00015105_augmented.csv.gz",
+      "md5": "a295a32889c972e691bdcadc506b1f2d",
+      "sha256": "9ae1ee6017b97b931b2dc33558f23d25740e9300afcc5c77ce95093572871f15",
+      "bytes": 2058039,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/a2/95a32889c972e691bdcadc506b1f2d"
+    },
+    {
+      "upstream_path": "SQ00015106/SQ00015106_augmented.csv.gz",
+      "md5": "ff7ff117b1b466301caff1552cb8e5e8",
+      "sha256": "518480eca496423a96e2cb5853e50e1ed0e0767abf59f4c45e2c0e160c86ca4c",
+      "bytes": 2057723,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ff/7ff117b1b466301caff1552cb8e5e8"
+    },
+    {
+      "upstream_path": "SQ00015107/SQ00015107_augmented.csv.gz",
+      "md5": "95d305a7438f080438621662d0c77227",
+      "sha256": "9b2942f42c2d245657174dc26f9a33a3e0da5aed931995d2672efd9bb05ff94b",
+      "bytes": 2057470,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/95/d305a7438f080438621662d0c77227"
+    },
+    {
+      "upstream_path": "SQ00015108/SQ00015108_augmented.csv.gz",
+      "md5": "f49f178b3f50f41ff0bbc7f7bc3bfa16",
+      "sha256": "f51f562ea08c0e34aa0155b23088b232ca565a8528814ba037c4b61b997c6e52",
+      "bytes": 2057696,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/f4/9f178b3f50f41ff0bbc7f7bc3bfa16"
+    },
+    {
+      "upstream_path": "SQ00015109/SQ00015109_augmented.csv.gz",
+      "md5": "a9d7ef5fa962f77189638f7501e35a1a",
+      "sha256": "ea303dcd76ec1cc3660e0d0a7b1e6e0bc0f0d5c8035afccb12693ecba248d61b",
+      "bytes": 2060092,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/a9/d7ef5fa962f77189638f7501e35a1a"
+    },
+    {
+      "upstream_path": "SQ00015110/SQ00015110_augmented.csv.gz",
+      "md5": "c257efc1dbb06b2646fd50b922d5a457",
+      "sha256": "c56da7cb73dcccfceb4c7602761ca8f1f4f080cdb640a70483aae9eb8abf236a",
+      "bytes": 2056115,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c2/57efc1dbb06b2646fd50b922d5a457"
+    },
+    {
+      "upstream_path": "SQ00015111/SQ00015111_augmented.csv.gz",
+      "md5": "1d844a0616ec76e3034cf0b4d4e3a60d",
+      "sha256": "77f3e7173435ef231cd092a8212c897c06325897d2637484bd51fed9c97b0d7d",
+      "bytes": 2055474,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/1d/844a0616ec76e3034cf0b4d4e3a60d"
+    },
+    {
+      "upstream_path": "SQ00015112/SQ00015112_augmented.csv.gz",
+      "md5": "c72e5cf97f3f784f2c9704ec7fadf8b2",
+      "sha256": "acef5997e2a8b028044a3a21c56dfb1c11471fb48901d03de94086e414ac3cd1",
+      "bytes": 2054983,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c7/2e5cf97f3f784f2c9704ec7fadf8b2"
+    },
+    {
+      "upstream_path": "SQ00015116/SQ00015116_augmented.csv.gz",
+      "md5": "9e573b86b32f4e629c800ecab2d9cb99",
+      "sha256": "a41151844dfb1519f77ca174b3ee6f3e6bb3b2d02178c36f1c713ef937b47168",
+      "bytes": 2026232,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/9e/573b86b32f4e629c800ecab2d9cb99"
+    },
+    {
+      "upstream_path": "SQ00015117/SQ00015117_augmented.csv.gz",
+      "md5": "d6d5fb80fab5b8be2dcad596cbfcbde5",
+      "sha256": "3fef324c72d9482353b866996e5f3d3dff0a2f1bb35de6c1704e6f5945df3970",
+      "bytes": 2014283,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/d6/d5fb80fab5b8be2dcad596cbfcbde5"
+    },
+    {
+      "upstream_path": "SQ00015118/SQ00015118_augmented.csv.gz",
+      "md5": "3e46ea90011325a88a7904a8f3467216",
+      "sha256": "d7b7af8ac7e95601a4cad13de445c991160737da1deac0658f837044a757ddb5",
+      "bytes": 2011371,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/3e/46ea90011325a88a7904a8f3467216"
+    },
+    {
+      "upstream_path": "SQ00015119/SQ00015119_augmented.csv.gz",
+      "md5": "765dbe9a80cf24fd724ec0a6b2da5779",
+      "sha256": "d630fb25214fbd1726fac5138409edb53bdb9d01ffabfe259b7ceb7216dc05e3",
+      "bytes": 2011541,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/76/5dbe9a80cf24fd724ec0a6b2da5779"
+    },
+    {
+      "upstream_path": "SQ00015120/SQ00015120_augmented.csv.gz",
+      "md5": "48ae9a8f35c02ff4e9291d7223993c48",
+      "sha256": "d6b55dcedd9d809ebb5478d4bd8eac51df96037ddd92da6682dc16ad7741a982",
+      "bytes": 2015031,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/48/ae9a8f35c02ff4e9291d7223993c48"
+    },
+    {
+      "upstream_path": "SQ00015121/SQ00015121_augmented.csv.gz",
+      "md5": "b2c9c6e6c10c9b197fe8ecc9a9b26935",
+      "sha256": "f7cd4eee8b1ce72903e4d88cb69cdb2f5f0c11b2f7d7da9452253d2ff718ce79",
+      "bytes": 2015126,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/b2/c9c6e6c10c9b197fe8ecc9a9b26935"
+    },
+    {
+      "upstream_path": "SQ00015122/SQ00015122_augmented.csv.gz",
+      "md5": "600786551094a750282a06621d21abed",
+      "sha256": "dff97fc12c4c68118efa40937388606a97f55406298b8643cfe5583ef730ffd1",
+      "bytes": 2010169,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/60/0786551094a750282a06621d21abed"
+    },
+    {
+      "upstream_path": "SQ00015123/SQ00015123_augmented.csv.gz",
+      "md5": "c45f70efa596b0090df86e1edae3cad2",
+      "sha256": "55cee49165ddafc62ad26ee7d0eb6e6aa962873c82a9f264e83112e9486a0525",
+      "bytes": 2011760,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c4/5f70efa596b0090df86e1edae3cad2"
+    },
+    {
+      "upstream_path": "SQ00015124/SQ00015124_augmented.csv.gz",
+      "md5": "4118aac877499369f4c87e065347e7f6",
+      "sha256": "bfc1a6666faf82b2df36e81450d2b613459bf3a47f7accd08cae865aec777137",
+      "bytes": 2056804,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/41/18aac877499369f4c87e065347e7f6"
+    },
+    {
+      "upstream_path": "SQ00015125/SQ00015125_augmented.csv.gz",
+      "md5": "6fa0b7b2d469d704cd0040ec479c6bbd",
+      "sha256": "eadd05738a38de5de2e7e1da54251348ceef2863b997cb503fbebca7fd41f1b3",
+      "bytes": 2025023,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/6f/a0b7b2d469d704cd0040ec479c6bbd"
+    },
+    {
+      "upstream_path": "SQ00015126/SQ00015126_augmented.csv.gz",
+      "md5": "0f137fe440fd54f82a12e6bb8591ba55",
+      "sha256": "abae0bc8c66490ec6c47d1cf9f3733beb9fd9d98533f34b00af6205a5ec81307",
+      "bytes": 2011491,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/0f/137fe440fd54f82a12e6bb8591ba55"
+    },
+    {
+      "upstream_path": "SQ00015127/SQ00015127_augmented.csv.gz",
+      "md5": "df9b5ee216bb92ada146e6b5c5c3395c",
+      "sha256": "37b47603dd54344977e07312c98ff3f2e670a0e46582bf02126d0a978f932a7d",
+      "bytes": 2058258,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/df/9b5ee216bb92ada146e6b5c5c3395c"
+    },
+    {
+      "upstream_path": "SQ00015128/SQ00015128_augmented.csv.gz",
+      "md5": "97bb78f45dc886e3dbbe6daa96aca9a4",
+      "sha256": "7acf3eaa098aa3ef145b9172ee3554b73d68b87ba60bf02f766200b6d11c30ce",
+      "bytes": 2051868,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/97/bb78f45dc886e3dbbe6daa96aca9a4"
+    },
+    {
+      "upstream_path": "SQ00015129/SQ00015129_augmented.csv.gz",
+      "md5": "557ad59afbb80f731e9252073ef0f448",
+      "sha256": "d164ea2110340b9f5ad0ec9d509d916f4910f0a8f86965944d4cf907b6849f17",
+      "bytes": 2049810,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/55/7ad59afbb80f731e9252073ef0f448"
+    },
+    {
+      "upstream_path": "SQ00015130/SQ00015130_augmented.csv.gz",
+      "md5": "aeb739864c8aeb69ebf1daccb3ce2700",
+      "sha256": "f98e2d566972414bd936ee6532af34b074ac4e49e642f432f8027e272fa80880",
+      "bytes": 2053357,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ae/b739864c8aeb69ebf1daccb3ce2700"
+    },
+    {
+      "upstream_path": "SQ00015131/SQ00015131_augmented.csv.gz",
+      "md5": "82a6f2846c1a9ae8e3a6482f8d861637",
+      "sha256": "1078ea0162365662a2bea19540468f05cb448e41b4201e944efbab3ac2f42322",
+      "bytes": 2053222,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/82/a6f2846c1a9ae8e3a6482f8d861637"
+    },
+    {
+      "upstream_path": "SQ00015132/SQ00015132_augmented.csv.gz",
+      "md5": "11a49541c74551d96cfcbcb9eb950bab",
+      "sha256": "d258fe17cae087afa8ce58ba0db565f86b90909b366915b05888d6773f4b6e55",
+      "bytes": 2050514,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/11/a49541c74551d96cfcbcb9eb950bab"
+    },
+    {
+      "upstream_path": "SQ00015133/SQ00015133_augmented.csv.gz",
+      "md5": "2d44247567d2f3f2a4e8badbe8e479fb",
+      "sha256": "b8c56e6858d39d1e91c0571ada195c3c44b3b058b688945c43cb224bc6132ee6",
+      "bytes": 2049222,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/2d/44247567d2f3f2a4e8badbe8e479fb"
+    },
+    {
+      "upstream_path": "SQ00015134/SQ00015134_augmented.csv.gz",
+      "md5": "64eb71193f560e86e75cb9834294b9b5",
+      "sha256": "57e7ba9182a5265d77aa90f6d5b94461fa7912b281e4baed81eea9c6424c49db",
+      "bytes": 2067166,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/64/eb71193f560e86e75cb9834294b9b5"
+    },
+    {
+      "upstream_path": "SQ00015135/SQ00015135_augmented.csv.gz",
+      "md5": "8d353b6538c586aa941c02c9cb9cb3c4",
+      "sha256": "651dd4ecb84d21349ad60201b76fe37cfc25075a653e52956d65f0de3ddb699b",
+      "bytes": 2061411,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/8d/353b6538c586aa941c02c9cb9cb3c4"
+    },
+    {
+      "upstream_path": "SQ00015136/SQ00015136_augmented.csv.gz",
+      "md5": "eef7eea1500213a6915fdeedf1e230ee",
+      "sha256": "ece54e21e0037b433dc0d2c621dc280465bc9136de34b8f4c765e45a7df111f8",
+      "bytes": 2070809,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ee/f7eea1500213a6915fdeedf1e230ee"
+    },
+    {
+      "upstream_path": "SQ00015137/SQ00015137_augmented.csv.gz",
+      "md5": "9ed59962856f4be8371a69730d3297e7",
+      "sha256": "76c3f0abf4ddbc3a443d026badfbbf288f56e5d34bea6a20ac8d7ee5d6062929",
+      "bytes": 2063702,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/9e/d59962856f4be8371a69730d3297e7"
+    },
+    {
+      "upstream_path": "SQ00015138/SQ00015138_augmented.csv.gz",
+      "md5": "c086ffaec7ccae63281b7f8780320430",
+      "sha256": "2da4a779c246135e0b2a57fd29e008652bcde2d701cb8d0753fc541eb7d5f71f",
+      "bytes": 2064695,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c0/86ffaec7ccae63281b7f8780320430"
+    },
+    {
+      "upstream_path": "SQ00015139/SQ00015139_augmented.csv.gz",
+      "md5": "9a93f63360f1c6373a5ffb298a06c88a",
+      "sha256": "f84110348fe99d14bdb5cfd6b3803c4e41cd283ec1ea9d425cac828aa95b9c01",
+      "bytes": 2066795,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/9a/93f63360f1c6373a5ffb298a06c88a"
+    },
+    {
+      "upstream_path": "SQ00015140/SQ00015140_augmented.csv.gz",
+      "md5": "b992e75b3b8859e9c09b2aaba5609b67",
+      "sha256": "1c366bfebc9fc17483b5bdc8a363ad9aef8b9d2f2571b3297c2d1f623a884e84",
+      "bytes": 2066062,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/b9/92e75b3b8859e9c09b2aaba5609b67"
+    },
+    {
+      "upstream_path": "SQ00015141/SQ00015141_augmented.csv.gz",
+      "md5": "0e9a141dc19ebde69ca56eecc8e8e6b1",
+      "sha256": "312a58d527680a83543bee6f642433f6ffbd1fe1e9bfa04c218d242bc91cf408",
+      "bytes": 2072250,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/0e/9a141dc19ebde69ca56eecc8e8e6b1"
+    },
+    {
+      "upstream_path": "SQ00015142/SQ00015142_augmented.csv.gz",
+      "md5": "7a801bea23322845f85700d78560ce9d",
+      "sha256": "c0f6f15318022185ef8603ddafa70d5315bc4566143ccf18fa971ec9c76b08d0",
+      "bytes": 2057339,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7a/801bea23322845f85700d78560ce9d"
+    },
+    {
+      "upstream_path": "SQ00015143/SQ00015143_augmented.csv.gz",
+      "md5": "3ebb9cdaf43989067187814dc5708350",
+      "sha256": "8f1c71f78a9d4b002aef1aea7928ce612099112c2f306e817a6c6ed402467b8c",
+      "bytes": 2061079,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/3e/bb9cdaf43989067187814dc5708350"
+    },
+    {
+      "upstream_path": "SQ00015144/SQ00015144_augmented.csv.gz",
+      "md5": "dd8c4f3960fe3c4af9583d0a2a3458bd",
+      "sha256": "57ca5d67034603c13da3b834c4c27651d5638bc6926eeff0c4b5db17457494d3",
+      "bytes": 2065465,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/dd/8c4f3960fe3c4af9583d0a2a3458bd"
+    },
+    {
+      "upstream_path": "SQ00015145/SQ00015145_augmented.csv.gz",
+      "md5": "86aaac737f44ebe755162c104b439455",
+      "sha256": "063616a88023ca068876492ca14979591d489a2235f430c4c8f34dc34b1fc3ae",
+      "bytes": 2062381,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/86/aaac737f44ebe755162c104b439455"
+    },
+    {
+      "upstream_path": "SQ00015146/SQ00015146_augmented.csv.gz",
+      "md5": "9ae17e8bb939023a13375be7af6c2b82",
+      "sha256": "ccbd7f74995a388981b9248bc38549b0a55dff876f004d621c54262d2fd26d32",
+      "bytes": 2063154,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/9a/e17e8bb939023a13375be7af6c2b82"
+    },
+    {
+      "upstream_path": "SQ00015147/SQ00015147_augmented.csv.gz",
+      "md5": "9399b381392bfb75175b2a9d2644da7e",
+      "sha256": "3ec82ceb7d7555d5852a8230df47589bac2130646aab07511aef3e2676e0c7f5",
+      "bytes": 2053062,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/93/99b381392bfb75175b2a9d2644da7e"
+    },
+    {
+      "upstream_path": "SQ00015148/SQ00015148_augmented.csv.gz",
+      "md5": "ee94dd88f3661dc62a550600ce89fff7",
+      "sha256": "ab18d45afff5869a2f097955695c295e72e493649f269c895e83959d730e43b0",
+      "bytes": 2055006,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ee/94dd88f3661dc62a550600ce89fff7"
+    },
+    {
+      "upstream_path": "SQ00015149/SQ00015149_augmented.csv.gz",
+      "md5": "89d285e3025e7df459c3f5bd40ed6c1c",
+      "sha256": "1eb6922d2744e034dae5f9340c4b230a060662fb29adb2cc9e0f93998d48a3d5",
+      "bytes": 2050771,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/89/d285e3025e7df459c3f5bd40ed6c1c"
+    },
+    {
+      "upstream_path": "SQ00015150/SQ00015150_augmented.csv.gz",
+      "md5": "610e72926e549c9497929800c3b8a584",
+      "sha256": "48f662955c9624875f98c326ec11d4ac1671b2e3874482983c18a986d928defd",
+      "bytes": 2066966,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/61/0e72926e549c9497929800c3b8a584"
+    },
+    {
+      "upstream_path": "SQ00015151/SQ00015151_augmented.csv.gz",
+      "md5": "ffccfb786cc32de1504a59d5dec87eea",
+      "sha256": "101ad92f4e9dcad791919c460b02d17b2e5337706510b6d47d26290fb4538a47",
+      "bytes": 2069940,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ff/ccfb786cc32de1504a59d5dec87eea"
+    },
+    {
+      "upstream_path": "SQ00015152/SQ00015152_augmented.csv.gz",
+      "md5": "a270c24652ad8f3a7800ea3ea4c8a98f",
+      "sha256": "e3cfd72240a34e03b21833fd5cf89c93304326a4686cb4a43f5854fc8e0ce821",
+      "bytes": 2065510,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/a2/70c24652ad8f3a7800ea3ea4c8a98f"
+    },
+    {
+      "upstream_path": "SQ00015153/SQ00015153_augmented.csv.gz",
+      "md5": "fb25f3c75c0788f762b8a3b238a5aed2",
+      "sha256": "5195e7759e61384387085b29c6758974aee2cb188d4a6991f212e4284410aba8",
+      "bytes": 2071280,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/fb/25f3c75c0788f762b8a3b238a5aed2"
+    },
+    {
+      "upstream_path": "SQ00015154/SQ00015154_augmented.csv.gz",
+      "md5": "ebc8e37bb7c80ea494547de5c3f4eb3e",
+      "sha256": "5c72903d8427302ed0909c35d30af1c5fdb0a090446db1e8ffe4b743bc5f1b0f",
+      "bytes": 2057653,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/eb/c8e37bb7c80ea494547de5c3f4eb3e"
+    },
+    {
+      "upstream_path": "SQ00015155/SQ00015155_augmented.csv.gz",
+      "md5": "ad8072aab43488723b630b390de9cd95",
+      "sha256": "ed543d6608abedcefa782b546df67240eecde9813256b9141ea436352b6aaad8",
+      "bytes": 2054633,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ad/8072aab43488723b630b390de9cd95"
+    },
+    {
+      "upstream_path": "SQ00015156/SQ00015156_augmented.csv.gz",
+      "md5": "992b2a17d8ad79bc51500cb1c2d4a940",
+      "sha256": "2ddf9f07f0e8f8aa2015fd31fe5d90a3ed220b8ca287b8c2e00d7dce60072a0f",
+      "bytes": 2050157,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/99/2b2a17d8ad79bc51500cb1c2d4a940"
+    },
+    {
+      "upstream_path": "SQ00015157/SQ00015157_augmented.csv.gz",
+      "md5": "91b5c0a90ceeaeb1863f10c8dda09016",
+      "sha256": "fa574619421fc11d7bffffe4d908e9de102bdd8216c85d4af8eff5bbc86e684a",
+      "bytes": 2051593,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/91/b5c0a90ceeaeb1863f10c8dda09016"
+    },
+    {
+      "upstream_path": "SQ00015158/SQ00015158_augmented.csv.gz",
+      "md5": "059e60233b9361122ff6bb6404184380",
+      "sha256": "abe7fb503309097b5b5bbe5dd85ee6b2c8346882cd524505c42188f4ef3e063a",
+      "bytes": 2049526,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/05/9e60233b9361122ff6bb6404184380"
+    },
+    {
+      "upstream_path": "SQ00015159/SQ00015159_augmented.csv.gz",
+      "md5": "3f1bc4e6d002c2cbb5e9f84730ad3052",
+      "sha256": "fd29260a9048d479be459c914f0619f9db5a76aeea996ccafee38fbf41781256",
+      "bytes": 2052138,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/3f/1bc4e6d002c2cbb5e9f84730ad3052"
+    },
+    {
+      "upstream_path": "SQ00015160/SQ00015160_augmented.csv.gz",
+      "md5": "313a4da5d5e319f8a9d2ef4618df6f49",
+      "sha256": "6bc925a2ee9e3fc831e62f47e5cece07f21025db1204ebd46a04144c8f30e73a",
+      "bytes": 2048040,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/31/3a4da5d5e319f8a9d2ef4618df6f49"
+    },
+    {
+      "upstream_path": "SQ00015162/SQ00015162_augmented.csv.gz",
+      "md5": "861a90a600ef2ad720682b1a3d8b8b4f",
+      "sha256": "b27b50ffbc5d131aa2e76e43b0b6b1aea30627d1fd75df73c13042b7dfe768dc",
+      "bytes": 2049967,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/86/1a90a600ef2ad720682b1a3d8b8b4f"
+    },
+    {
+      "upstream_path": "SQ00015163/SQ00015163_augmented.csv.gz",
+      "md5": "d63e22689f34bd8f87c2952ecf3cd6a1",
+      "sha256": "f014b0bdc1083c0ea630f43376d642d2c121c5ef1988ace6cb2eaa4e6e57f502",
+      "bytes": 2056850,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/d6/3e22689f34bd8f87c2952ecf3cd6a1"
+    },
+    {
+      "upstream_path": "SQ00015164/SQ00015164_augmented.csv.gz",
+      "md5": "174e3b8e02402a0d8544a0904e9de0bc",
+      "sha256": "e021c342aaf280164ce991816bd36ec04d859f20ff0e6295b1595c1ef0d18789",
+      "bytes": 2054498,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/17/4e3b8e02402a0d8544a0904e9de0bc"
+    },
+    {
+      "upstream_path": "SQ00015165/SQ00015165_augmented.csv.gz",
+      "md5": "559e3ce7dc1e4faf3d5d3f0a2d383172",
+      "sha256": "acdf1704547ec1a7f1acf5fabe06d656820317ec19e9638d273a917f502a1797",
+      "bytes": 2054960,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/55/9e3ce7dc1e4faf3d5d3f0a2d383172"
+    },
+    {
+      "upstream_path": "SQ00015166/SQ00015166_augmented.csv.gz",
+      "md5": "622908294e702fd005875144e3a5ea77",
+      "sha256": "21a0490cf206b14bdbeac980ef29d98b58fb0b3146c1cbd03c80fd8d48b563ae",
+      "bytes": 2055233,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/62/2908294e702fd005875144e3a5ea77"
+    },
+    {
+      "upstream_path": "SQ00015167/SQ00015167_augmented.csv.gz",
+      "md5": "6c6d1b4a92aff9d1c49f2d93b8491ec7",
+      "sha256": "69efc06d78b5812bf6f0c02aa2c80baeb9167a56a8999d0892322a78e8725a26",
+      "bytes": 2055168,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/6c/6d1b4a92aff9d1c49f2d93b8491ec7"
+    },
+    {
+      "upstream_path": "SQ00015168/SQ00015168_augmented.csv.gz",
+      "md5": "69ce03412a115684115a95c4c108abe2",
+      "sha256": "61becb0e05b45c450719876cd33fd59b25ef41a21ac5e5aeffce2280a8f6d67a",
+      "bytes": 2054573,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/69/ce03412a115684115a95c4c108abe2"
+    },
+    {
+      "upstream_path": "SQ00015169/SQ00015169_augmented.csv.gz",
+      "md5": "0baa045010ea93e3cfeae15bae87fbf3",
+      "sha256": "81b8fc1167fd774af7fd3e1670e4d176d1ed9d8501dc23379fa9a8a87a628a5c",
+      "bytes": 2055566,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/0b/aa045010ea93e3cfeae15bae87fbf3"
+    },
+    {
+      "upstream_path": "SQ00015170/SQ00015170_augmented.csv.gz",
+      "md5": "c458ecd0b6eb815325a583c4c06ac6da",
+      "sha256": "562b00b209f3c083f8d4c59482a849d6bff62c2f7754e9042e77727165d443f5",
+      "bytes": 2061362,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c4/58ecd0b6eb815325a583c4c06ac6da"
+    },
+    {
+      "upstream_path": "SQ00015171/SQ00015171_augmented.csv.gz",
+      "md5": "2b494a885a26a3de75b2b0ec3ad4926b",
+      "sha256": "851cba316cad4bf472b61fa9eab03321f5bee4d7b4bcd71588de79a888e2716f",
+      "bytes": 2052604,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/2b/494a885a26a3de75b2b0ec3ad4926b"
+    },
+    {
+      "upstream_path": "SQ00015172/SQ00015172_augmented.csv.gz",
+      "md5": "fada7cfb82e9b6904cb24ba20ce34cbf",
+      "sha256": "07a3815399d8fbd8e20a95b6ab2de216ffc8edfa1070af99c92e6b32112b56da",
+      "bytes": 2054011,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/fa/da7cfb82e9b6904cb24ba20ce34cbf"
+    },
+    {
+      "upstream_path": "SQ00015173/SQ00015173_augmented.csv.gz",
+      "md5": "c98675c37410c4d8ba777553a33065ad",
+      "sha256": "702acf61cb263a74de16de979ca555b154bf2c9dc41d01135d247ccf23109428",
+      "bytes": 2050900,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c9/8675c37410c4d8ba777553a33065ad"
+    },
+    {
+      "upstream_path": "SQ00015194/SQ00015194_augmented.csv.gz",
+      "md5": "2e4874c0eda0b170d403d00cee66a972",
+      "sha256": "f115b788f043ffeb5b7d9e33682bd9d22871ac5eb8898fe3406f08fed58b2bae",
+      "bytes": 2064125,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/2e/4874c0eda0b170d403d00cee66a972"
+    },
+    {
+      "upstream_path": "SQ00015195/SQ00015195_augmented.csv.gz",
+      "md5": "72c233c263914ae600e3ce366f638bb3",
+      "sha256": "2d3d62b97577dda85f980ae4637397105850c75283d97cb5926cb04a946903f0",
+      "bytes": 2052137,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/72/c233c263914ae600e3ce366f638bb3"
+    },
+    {
+      "upstream_path": "SQ00015196/SQ00015196_augmented.csv.gz",
+      "md5": "6c9b6556997fb2787e8a60e7f3b4bb19",
+      "sha256": "7e507b4d955c3db470e7e7c299ee586bfa3fec9a1b9281f235768c07b7007801",
+      "bytes": 2050875,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/6c/9b6556997fb2787e8a60e7f3b4bb19"
+    },
+    {
+      "upstream_path": "SQ00015197/SQ00015197_augmented.csv.gz",
+      "md5": "ea093e30abc8da7a81e69ff97bb29b45",
+      "sha256": "bb2a6336b207f55c338f4241e6164851c6591b632de2c430cafc9de6bb5417a4",
+      "bytes": 2048634,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/ea/093e30abc8da7a81e69ff97bb29b45"
+    },
+    {
+      "upstream_path": "SQ00015198/SQ00015198_augmented.csv.gz",
+      "md5": "cc0ca123fb3fd201a80f1f04c226a752",
+      "sha256": "cf9b8196be829a85966e69e0e2cf880d80f25e16fdc860620862934d683d0bcd",
+      "bytes": 2049847,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/cc/0ca123fb3fd201a80f1f04c226a752"
+    },
+    {
+      "upstream_path": "SQ00015199/SQ00015199_augmented.csv.gz",
+      "md5": "6f06f042f2cb405266d0e5b42695de65",
+      "sha256": "3c818f426d2c30677a10c8abb874c10fba1a918c4cf193c89f2a8be595d34dda",
+      "bytes": 2053594,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/6f/06f042f2cb405266d0e5b42695de65"
+    },
+    {
+      "upstream_path": "SQ00015200/SQ00015200_augmented.csv.gz",
+      "md5": "35b6240a4df3411aa7ccd5891d30f837",
+      "sha256": "5db51fac36a198defe631cfa73801a386bad0fc06265be4281e4120f3280c414",
+      "bytes": 2051987,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/35/b6240a4df3411aa7ccd5891d30f837"
+    },
+    {
+      "upstream_path": "SQ00015201/SQ00015201_augmented.csv.gz",
+      "md5": "76ce5750967b5c79bdc43671ab13954a",
+      "sha256": "e5deb153efc995e3dd07cc2f3bf65ebba12ee0691942bb92b4171281ee6cb309",
+      "bytes": 2050420,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/76/ce5750967b5c79bdc43671ab13954a"
+    },
+    {
+      "upstream_path": "SQ00015202/SQ00015202_augmented.csv.gz",
+      "md5": "60e5f13f39dc463d79a4db49e03ffbfe",
+      "sha256": "15619329ea4a3ede9e00238e310de9bd234f419b3a244f41a946a2a2f2af4bf8",
+      "bytes": 2049706,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/60/e5f13f39dc463d79a4db49e03ffbfe"
+    },
+    {
+      "upstream_path": "SQ00015203/SQ00015203_augmented.csv.gz",
+      "md5": "7f50001657eb469b3f9616a1c8cd1a83",
+      "sha256": "5b7cdc4865e3701a667ba683548077f56577fad425c9ad779f9fd834218f9e6e",
+      "bytes": 2048920,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7f/50001657eb469b3f9616a1c8cd1a83"
+    },
+    {
+      "upstream_path": "SQ00015204/SQ00015204_augmented.csv.gz",
+      "md5": "765b262b986bee7b5d8e057c21617e02",
+      "sha256": "fb7e6c03050be8ac04be698e28ac7c9aa393b4851791546c18024d075eee034e",
+      "bytes": 2051173,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/76/5b262b986bee7b5d8e057c21617e02"
+    },
+    {
+      "upstream_path": "SQ00015205/SQ00015205_augmented.csv.gz",
+      "md5": "a50498dd0fab82e699b5185dae2f6bb1",
+      "sha256": "453c8c7023f723ec2e8bad2e44d0a97bed0993e8d8329b643be4b9f79ea78da5",
+      "bytes": 2049837,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/a5/0498dd0fab82e699b5185dae2f6bb1"
+    },
+    {
+      "upstream_path": "SQ00015206/SQ00015206_augmented.csv.gz",
+      "md5": "41b50424e252b51cc777a34796dc71ab",
+      "sha256": "177e075c2a9e909ddf4ddf565a9fcbb7a0242037406482e745cf63e4dfcf232a",
+      "bytes": 2051414,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/41/b50424e252b51cc777a34796dc71ab"
+    },
+    {
+      "upstream_path": "SQ00015207/SQ00015207_augmented.csv.gz",
+      "md5": "b15ce38bd83addf9d5417121e1226f21",
+      "sha256": "353656bbffa5c7ac29f7ea0dfcf6ffe1df5dd7d5dfe9a8216ae25b8d97bd4937",
+      "bytes": 2044826,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/b1/5ce38bd83addf9d5417121e1226f21"
+    },
+    {
+      "upstream_path": "SQ00015208/SQ00015208_augmented.csv.gz",
+      "md5": "c6158e6e8636c8547ff45df7524b4d66",
+      "sha256": "ae2fa3b60fd6bbc509af2d91dc5f2d57a95c32659d89bbfaa5d6a6eaa14994ca",
+      "bytes": 2049973,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/c6/158e6e8636c8547ff45df7524b4d66"
+    },
+    {
+      "upstream_path": "SQ00015209/SQ00015209_augmented.csv.gz",
+      "md5": "21a876fea52b9cf45f8be5e9f519b135",
+      "sha256": "a7d505470c67b1fd2abdf54c0428ff54ef185a3be6426b47e8d1267c1404c0ee",
+      "bytes": 2051988,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/21/a876fea52b9cf45f8be5e9f519b135"
+    },
+    {
+      "upstream_path": "SQ00015210/SQ00015210_augmented.csv.gz",
+      "md5": "83b255189180afd05e214786a509a69b",
+      "sha256": "f2490ce685aff981b8f86b728e34c5c3156dfaefd02779d41666dc5467c9334f",
+      "bytes": 2049818,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/83/b255189180afd05e214786a509a69b"
+    },
+    {
+      "upstream_path": "SQ00015211/SQ00015211_augmented.csv.gz",
+      "md5": "7f863c0d145f4519151d96a6674164a2",
+      "sha256": "390da0380e8849fbfc98085058828dbf11b1548be9978ca5c3ec7ded698af831",
+      "bytes": 2052513,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7f/863c0d145f4519151d96a6674164a2"
+    },
+    {
+      "upstream_path": "SQ00015212/SQ00015212_augmented.csv.gz",
+      "md5": "f8e889662873a161eb6af4beaed7291b",
+      "sha256": "6f309605008bfa0128002e666d8385e1d4f94ecb8b02fed0cdf7d49df6ac05fa",
+      "bytes": 2050398,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/f8/e889662873a161eb6af4beaed7291b"
+    },
+    {
+      "upstream_path": "SQ00015214/SQ00015214_augmented.csv.gz",
+      "md5": "f0106c7c666c333ef0f005db85d8eecf",
+      "sha256": "18672bc603d878580981a437d3575c1cfa26efd2b830183855fb9d8144dbd4ce",
+      "bytes": 2059817,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/f0/106c7c666c333ef0f005db85d8eecf"
+    },
+    {
+      "upstream_path": "SQ00015215/SQ00015215_augmented.csv.gz",
+      "md5": "f1a844ceb6d65aaa879d5cbb920ddf61",
+      "sha256": "661d5e27ec47a981cf4346a1ce929197ea0e1898ba098d6baee350bfbe830180",
+      "bytes": 2056384,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/f1/a844ceb6d65aaa879d5cbb920ddf61"
+    },
+    {
+      "upstream_path": "SQ00015216/SQ00015216_augmented.csv.gz",
+      "md5": "004a9c4b1951d6c5440a0adb5e6a508f",
+      "sha256": "62814408c5cab968379d57581923e9084065cddc74dd2683f619372673be7d99",
+      "bytes": 2055739,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/00/4a9c4b1951d6c5440a0adb5e6a508f"
+    },
+    {
+      "upstream_path": "SQ00015217/SQ00015217_augmented.csv.gz",
+      "md5": "158b2be9b278ee47b2f2dbfe48fc5f62",
+      "sha256": "2be755ef089dec54196a7c94b56497e9d132b68b4abdbd8cc0b496323d0d5d24",
+      "bytes": 2056302,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/15/8b2be9b278ee47b2f2dbfe48fc5f62"
+    },
+    {
+      "upstream_path": "SQ00015218/SQ00015218_augmented.csv.gz",
+      "md5": "b21d2b8e715db50cc0f64a72208a1968",
+      "sha256": "d9c939ed1d07a38b6baae00ade3b38ae016303b3c3b672661a784e2504ebdffa",
+      "bytes": 2060405,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/b2/1d2b8e715db50cc0f64a72208a1968"
+    },
+    {
+      "upstream_path": "SQ00015219/SQ00015219_augmented.csv.gz",
+      "md5": "dd63332cb98c14caa73df67edcbdeb7e",
+      "sha256": "439bcc4a1fc12b7ed540a3f8877684e14614623d8d2f129f1edf6f7ad00e166a",
+      "bytes": 2061490,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/dd/63332cb98c14caa73df67edcbdeb7e"
+    },
+    {
+      "upstream_path": "SQ00015220/SQ00015220_augmented.csv.gz",
+      "md5": "38177c80241a0f9ac9b4a060aace0bfe",
+      "sha256": "c5ab3067eb36aa58b72b68b5a80d1dbb0bef67bd1fbf29ac23481a808dfc7968",
+      "bytes": 2053591,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/38/177c80241a0f9ac9b4a060aace0bfe"
+    },
+    {
+      "upstream_path": "SQ00015221/SQ00015221_augmented.csv.gz",
+      "md5": "7a83a5c037bb54a37f6b6b6b8ff885dd",
+      "sha256": "af662e40078c95bc996629586515d14616d0158d2ba6c74b6ca9e1fb3734f53f",
+      "bytes": 2058581,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/7a/83a5c037bb54a37f6b6b6b8ff885dd"
+    },
+    {
+      "upstream_path": "SQ00015222/SQ00015222_augmented.csv.gz",
+      "md5": "070800ab92f0730fc0129d972eeeed0c",
+      "sha256": "02cd9d981d32443d9010170b9f3e02d71bac454d6aafe72a3f70becafe98efdb",
+      "bytes": 2056468,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/07/0800ab92f0730fc0129d972eeeed0c"
+    },
+    {
+      "upstream_path": "SQ00015223/SQ00015223_augmented.csv.gz",
+      "md5": "8b7563710db5e40064a7e29ce67d9390",
+      "sha256": "4b100507b0f244f8715504cd87cb53c366e4fe9c928d069679d25f73b5d911e2",
+      "bytes": 2054760,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/8b/7563710db5e40064a7e29ce67d9390"
+    },
+    {
+      "upstream_path": "SQ00015224/SQ00015224_augmented.csv.gz",
+      "md5": "32afbe22776ec7f40ba3cf5e36631a1a",
+      "sha256": "59cae3507eb04a2bd247601e42d1ac1552781f1081335c19f76ff36fa39386b4",
+      "bytes": 2056760,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/32/afbe22776ec7f40ba3cf5e36631a1a"
+    },
+    {
+      "upstream_path": "SQ00015229/SQ00015229_augmented.csv.gz",
+      "md5": "11357faedbfed41301ebf1969edc511e",
+      "sha256": "3e66e67cc9761be9ec7a9747d91adbbd36b8017344dc219ee8856bd1675c72b7",
+      "bytes": 2063534,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/11/357faedbfed41301ebf1969edc511e"
+    },
+    {
+      "upstream_path": "SQ00015230/SQ00015230_augmented.csv.gz",
+      "md5": "896ee3da6f74026f535c377b4b382410",
+      "sha256": "5eca4aca4164305ce11b27e2f07af521a4502382ee9ea94ef01af358f8dedeed",
+      "bytes": 2065956,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/89/6ee3da6f74026f535c377b4b382410"
+    },
+    {
+      "upstream_path": "SQ00015231/SQ00015231_augmented.csv.gz",
+      "md5": "667ae5b9cd74eee0ce9cd5dcf6f6b446",
+      "sha256": "19a4af9107f440a4504c7b0ed491cc6266bb59c9ba4c3a27b78a0b056397a1eb",
+      "bytes": 2065771,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/66/7ae5b9cd74eee0ce9cd5dcf6f6b446"
+    },
+    {
+      "upstream_path": "SQ00015232/SQ00015232_augmented.csv.gz",
+      "md5": "f6f5a3a890ce5f5a59f3c9e35f475b7b",
+      "sha256": "873900d73eb66c2ae2eb9e840a8556480939df2614c24329e750bb886fd04cf4",
+      "bytes": 2065463,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/f6/f5a3a890ce5f5a59f3c9e35f475b7b"
+    },
+    {
+      "upstream_path": "SQ00015233/SQ00015233_augmented.csv.gz",
+      "md5": "39eaf73dad6f37e8a72f354cfd0c42ee",
+      "sha256": "b57a7dba7a83da9149ea1cc5c632f6a13b5483b03c07440c138a2622609a27ef",
+      "bytes": 2066978,
+      "url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0004-lincs/broad/workspace/software/lincs-cell-painting_DVC/39/eaf73dad6f37e8a72f354cfd0c42ee"
+    }
+  ],
+  "annotation_sha256": "fa06cb8310a5cf801f5f1ba39bf8176a1b4eefdb4a23d1739ba92be31632b6be",
+  "barcode_sha256": "dffd7395d0b0d92e5a12c04501b6688fc0dd7820261cd818ba12d7cd130cede2"
+}

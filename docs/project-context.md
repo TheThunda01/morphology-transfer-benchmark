@@ -1,0 +1,11 @@
+# Why this project exists
+
+A compound can change a cell in several ways at once: its shape, internal organization, staining patterns, and the distribution of those measurements across a population. That makes morphology interesting as a broad readout of a cellular response. It also creates a difficult question: when two compounds look similar in this readout, are we recovering a useful biological relationship, or simply a shared experimental artifact?
+
+This project explores that question using public LINCS Cell Painting profiles from A549 cells. The original study compared morphology with gene-expression profiling and found that the assays captured partly overlapping, partly distinct information. It also described the difficulty of recovering compound mechanisms from either assay alone. Those findings motivate this benchmark; they are not results reproduced or claimed here. [Way et al., 2022](https://pubmed.ncbi.nlm.nih.gov/36395727/)
+
+The scope is deliberately narrow: a prespecified panel of annotated mechanisms, one cell line and exposure period, and one recorded dose bin. The analysis asks whether a compound's profile retrieves other compounds with the same annotation when related identities and shared plate layouts are excluded. A learned baseline, where the retained class support permits it, asks a related question under a fixed compound-held-out split.
+
+The key themes are **biological interpretation, experimental structure, and honest transfer**. Controls help put measurements from different plates on a comparable scale, but they do not erase every batch or position effect. Repeated wells improve characterization of a compound; they do not create additional independent compounds. A successful match within this selected panel does not identify a new drug target or establish efficacy in a patient. [Arevalo et al., 2024](https://pubmed.ncbi.nlm.nih.gov/39095341/)
+
+The repository is intended as an inspectable computational study: trace the public source data, see which compounds and queries are eligible, compare against simple baselines, and examine failures alongside successes. No new laboratory experiment is claimed. Start with [the biology and concepts](biology-and-concepts.md), then use [the methods](methods.md) to follow the exact analysis choices.

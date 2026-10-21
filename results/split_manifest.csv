@@ -1,0 +1,77 @@
+group,moa,split
+AOJJSUZBOXZQNB,topoisomerase inhibitor,train
+BAORCAMWLWRZQG,topoisomerase inhibitor,train
+BCFGMOOMADDAQU,EGFR inhibitor,train
+BYUKOOOZTSTOOH,tubulin polymerization inhibitor,train
+CYOHGALHFOKKQC,MEK inhibitor,train
+DDUHZTYCFQRHIY,tubulin polymerization inhibitor,train
+DFJSJLGUIXFDJP,EGFR inhibitor,train
+DUYJMQONPNNFPI,EGFR inhibitor,train
+FECGNJPYVFEKOD,HDAC inhibitor,train
+FIMYFEGKMOCQKT,MEK inhibitor,train
+FJHBVJOVLFPMQE,topoisomerase inhibitor,train
+FTFRZXFNZVCRSK,EGFR inhibitor,train
+GFMMXOIFOQCCGU,MEK inhibitor,train
+HUFOZJXAKZVRNJ,EGFR inhibitor,train
+IDYZIJYBMGIQMJ,topoisomerase inhibitor,train
+IFSDAJWBUCMOAH,PI3K inhibitor,train
+INVTYAOGFAGBOE,HDAC inhibitor,train
+JHDKZFFAIZKUCU,HDAC inhibitor,train
+KKZJGLLVHKMTCM,topoisomerase inhibitor,train
+LCVIRAZGMYMNNT,Aurora kinase inhibitor,train
+LHNIIDJUOCFXAP,PI3K inhibitor,train
+MAUCONCHVWBMHK,HDAC inhibitor,train
+MQMKRQLTIWPEDM,PI3K inhibitor,train
+MTJHLONVHHPNSI,tubulin polymerization inhibitor,train
+OBKXEAXTFZPCHS,HDAC inhibitor,train
+OFDNQWIFNXBECV,tubulin polymerization inhibitor,train
+OPXLLQIJSORQAM,tubulin polymerization inhibitor,train
+PAWIYAYFNXQGAP,HDAC inhibitor,train
+QGZYDVAGYRLSKP,HDAC inhibitor,train
+QINPEPAQOBZPOF,PI3K inhibitor,train
+QTBWCSQGBMPECM,Aurora kinase inhibitor,train
+RCINICONZNJXQF,tubulin polymerization inhibitor,train
+RCLQNICOARASSR,MEK inhibitor,train
+RDSACQWTXKSHJT,MEK inhibitor,train
+ROWSTIYZUWEOMM,topoisomerase inhibitor,train
+RWEVIPRMPFNTLO,MEK inhibitor,train
+RYYNGWLOYLRZLK,Aurora kinase inhibitor,train
+UJIAQDJKSXQLIT,PI3K inhibitor,train
+ULXXDDBFHOBEHA,EGFR inhibitor,train
+UPALIKSFLSVKIS,topoisomerase inhibitor,train
+UWXSAYUXVSFDBQ,EGFR inhibitor,train
+VAZAPHZUAVEOMC,HDAC inhibitor,train
+VDUWPHTZYNWKRN,topoisomerase inhibitor,train
+WVUNYSQLFKLYNI,EGFR inhibitor,train
+XAGMUUZPGZWTRP,topoisomerase inhibitor,train
+XGALLCVXEZPNRQ,EGFR inhibitor,train
+XTKLTGBKIDQGQL,PI3K inhibitor,train
+ZLHFILGSQDJULK,Aurora kinase inhibitor,train
+AAKJLRGGTJKAMG,EGFR inhibitor,validation
+BSMCAPRUBJMWDF,MEK inhibitor,validation
+CWHUFRVAEUJCEF,PI3K inhibitor,validation
+GBJVVSCPOBPEIT,Aurora kinase inhibitor,validation
+HVXBOLULGPECHP,tubulin polymerization inhibitor,validation
+LSPANGZZENHZNJ,EGFR inhibitor,validation
+NCNRHFGMJRPRSK,HDAC inhibitor,validation
+OHRURASPPZQGQM,HDAC inhibitor,validation
+OMZCMEYTWSXEPZ,EGFR inhibitor,validation
+SOLIIYNRSAWTSQ,tubulin polymerization inhibitor,validation
+UWKQSNNFCGGAFS,topoisomerase inhibitor,validation
+VIUAUNHCRHHYNE,MEK inhibitor,validation
+VJJPUSNTGOMMGY,topoisomerase inhibitor,validation
+XCPGHVQEEXUHNC,topoisomerase inhibitor,validation
+ACWZRVQXLIRSDF,MEK inhibitor,test
+BEUQXVWXFDOSAQ,PI3K inhibitor,test
+BWDQBBCUWLSASG,HDAC inhibitor,test
+GFYRZTLCYQQVHZ,topoisomerase inhibitor,test
+HHFBDROWDBDFBR,Aurora kinase inhibitor,test
+HXHWSAZORRCQMX,tubulin polymerization inhibitor,test
+JWNPDZNEKVCWMY,EGFR inhibitor,test
+KAZSKMJFUPEHHW,topoisomerase inhibitor,test
+LVXJQMNHJWSHET,EGFR inhibitor,test
+SUDAHWBOROXANE,MEK inhibitor,test
+VOPDXHFYDJAYNS,HDAC inhibitor,test
+XZAFZXJXZHRNAQ,topoisomerase inhibitor,test
+ZDZOTLJHXYCWBA,tubulin polymerization inhibitor,test
+ZYQXEVJIFYIBHZ,EGFR inhibitor,test
