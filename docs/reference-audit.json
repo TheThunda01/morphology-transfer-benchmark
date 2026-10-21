@@ -44,7 +44,7 @@
       "access_level": "full_text",
       "metadata_status": "verified",
       "supported_claims": [
-        "Source study\u2019s Cell Painting/gene-expression comparison, 48-hour A549 context, usual micromolar doses, imperfect mechanism annotations and well-position effects."
+        "Source study’s Cell Painting/gene-expression comparison, 48-hour A549 context, usual micromolar doses, imperfect mechanism annotations and well-position effects."
       ],
       "limitations": [
         "Complete main text was retrieved in two chunks; sections bearing on claims were inspected. Supplementary material was not comprehensively reviewed.",
@@ -238,6 +238,57 @@
       ],
       "corrections": [],
       "version": "1.8"
+    },
+    {
+      "id": "lincs-dose-recoding",
+      "source_type": "official_software_documentation",
+      "title": "LINCS dose recoding function",
+      "authors": "LINCS Cell Painting maintainers",
+      "year": null,
+      "url": "https://github.com/broadinstitute/lincs-cell-painting/blob/061870127481dcd73c29df85ebcfddeac2ed0828/utils/dose.py",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Dose recoding uses the closest numeric mapping entry and returns its one-based category index."
+      ],
+      "limitations": [
+        "No physical-unit conversion or independent validation of per-well concentration is provided by this function."
+      ],
+      "corrections": [],
+      "version": "061870127481dcd73c29df85ebcfddeac2ed0828"
+    }
+  ],
+  "follow_up_reviews": [
+    {
+      "review_date": "2026-10-21",
+      "scope": "Targeted maintenance and scientific-language recheck; earlier source-by-source dates and historical search logs retained.",
+      "source_checks": [
+        {
+          "reference_id": "pmid:36395727",
+          "access_level_this_review": "full_text_sections",
+          "checked": "PMC Results and Methods: A549, 48-hour imaging, 24-hour L1000, 0.04-10 micromolar dose range, fixed positions and 1,790 extracted features; supplements not comprehensively inspected."
+        },
+        {
+          "reference_id": "lincs-source",
+          "access_level_this_review": "official_documentation",
+          "checked": "Pinned profile_cells.py inspected: median aggregation, numeric dose mapping, unconverted Metadata_mmoles_per_liter use."
+        },
+        {
+          "reference_id": "sklearn-ap",
+          "access_level_this_review": "official_documentation",
+          "checked": "Version 1.8 definition of AP as precision weighted by recall increments; distinct from trapezoidal integration."
+        },
+        {
+          "reference_id": "lincs-dose-recoding",
+          "access_level_this_review": "official_documentation",
+          "checked": "Full pinned source function inspected; no unit conversion occurs."
+        }
+      ],
+      "limits": [
+        "This follow-up is not a new systematic literature search or comprehensive supplementary-material appraisal.",
+        "Local numerical reproduction verifies calculations, not biological generalization."
+      ]
     }
   ]
 }

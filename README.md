@@ -54,6 +54,8 @@ The source has fixed well positions, one cell line and one exposure duration. Co
 
 [Glossary](docs/glossary.md) · [Assumptions and justifications](docs/assumptions.md) · [Reference audit](docs/reference-audit.json) · [Review record, 20 October 2026](docs/review-2026-10-20.md)
 
+[Maintenance review, 21 October 2026](docs/review-2026-10-21.md) records the Windows checkout fix, source recheck, and interpretation of legacy output labels.
+
 | Guide | What it covers |
 | --- | --- |
 | [Project context](docs/project-context.md) | Biological question and rationale |

@@ -4,7 +4,10 @@ permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -13,5 +16,5 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements.txt
       - run: python -m unittest discover -s tests -v
-      - run: python -m morphology --output /tmp/morphology-results
-      - run: python scripts/check_reproduction.py /tmp/morphology-results
+      - run: python -m morphology --output reproduced-results
+      - run: python scripts/check_reproduction.py reproduced-results

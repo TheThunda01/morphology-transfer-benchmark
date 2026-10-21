@@ -234,7 +234,7 @@ def plot_report(path,support,queries,scores,excluded=()):
     axes[0].barh(labels,[support[k] for k in labels],color=['#777777' if k in excluded else '#0072b2' for k in labels])
     for i,k in enumerate(labels):
         if k in excluded:axes[0].text(support[k]+0.15,i,'not scored',va='center',fontsize=8)
-    axes[0].set_xlabel('Independent related-compound groups');axes[0].set_title('Available panel support')
+    axes[0].set_xlabel('Distinct related-compound groups');axes[0].set_title('Available panel support')
     eligible=[q for q in queries if q['status']=='eligible'];positions=np.arange(len(eligible))
     axes[1].scatter(positions,[q['average_precision'] for q in eligible],label='Cosine retrieval',color='#0072b2')
     axes[1].scatter(positions,[q['random_ap_expectation'] for q in eligible],label='Random-order expectation',color='#d55e00',marker='x')
@@ -251,7 +251,7 @@ def run(data_dir,output):
     groups,x,audit=aggregate_compounds(rows,normalized,config)
     available=Counter(row['moa'] for row in groups)
     eligible_classes=[label for label in config['moa_classes'] if available[label]>=config['minimum_compounds_per_class']]
-    if len(eligible_classes)<2:raise ValueError('fewer than two classes pass the prespecified independent-compound support gate')
+    if len(eligible_classes)<2:raise ValueError('fewer than two classes pass the prespecified distinct-compound support gate')
     for row in audit:
         if row['status']=='eligible' and row['moa'] not in eligible_classes:row['status']='insufficient_class_support'
     candidates=annotation_audit(data_dir,groups,audit,config)
@@ -290,7 +290,7 @@ def run(data_dir,output):
                           'mean_average_precision':float(np.mean([q['average_precision'] for q in eligible])) if eligible else None,
                           'random_mean_average_precision':float(np.mean([q['random_ap_expectation'] for q in eligible])) if eligible else None,
                           'top1_accuracy':float(np.mean([q['top1_correct'] for q in eligible])) if eligible else None},
-             'classification':scores,'neural_model':'Not fitted: only a small number of independent compounds per class',
+             'classification':scores,'neural_model':'Not fitted: only a small number of distinct compound groups per class',
              'normalization':'DMSO-only plate median/MAD; all subsequent feature selection, imputation and scaling fitted on training compound groups',
              'upstream_dose_field':'Metadata_mmoles_per_liter; name conflicts with micromolar doses in source publication, so values are retained as source values without silent unit conversion'}
     metrics['selected_dose_values']=sorted({r['Metadata_mmoles_per_liter'] for r in rows if r['Metadata_broad_sample']!='DMSO'})
@@ -307,7 +307,7 @@ def run(data_dir,output):
                 [r['moa'] for r in support if r['status']!='included'])
     text=['# Morphology transfer benchmark','',f"{len(groups)} related-compound groups; {len(rows)} retained raw wells; {int(keep.sum())}/{len(names)} training-usable features.",'',
           f"The fixed split contains {len(splits['train'])} training, {len(splits['validation'])} validation, and {len(splits['test'])} test groups. All related identities and replicate wells stay together.",'',
-          f"Requested {len(config['moa_classes'])} mechanism classes; {len(eligible_classes)} pass the prespecified minimum of {config['minimum_compounds_per_class']} independent groups. Inspect class_support.csv and annotation_audit.csv for all exclusions.",'',
+          f"Requested {len(config['moa_classes'])} mechanism classes; {len(eligible_classes)} pass the prespecified minimum of {config['minimum_compounds_per_class']} distinct compound groups. Inspect class_support.csv and annotation_audit.csv for all exclusions.",'',
           f"Retrieval: {len(eligible)}/{len(queries)} test queries have a same-MOA training reference after both identity and plate-map exclusions. Mean AP is {display(metrics['retrieval']['mean_average_precision'])}; random-order expected AP is {display(metrics['retrieval']['random_mean_average_precision'])}. These are within-panel results.",'',
           '| Model | Selected setting | Test accuracy | Test macro F1 |','| --- | --- | ---: | ---: |']
     text += [f"| {s['model']} | {s['setting']} | {s['accuracy']:.3f} | {s['macro_f1']:.3f} |" for s in scores]

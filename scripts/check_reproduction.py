@@ -8,6 +8,14 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 
 
+def comparable_metadata(value):
+    """Normalize one documented wording correction in the frozen reference."""
+    if isinstance(value,dict) and value.get('neural_model') == 'Not fitted: only a small number of independent compounds per class':
+        value=dict(value)
+        value['neural_model']='Not fitted: only a small number of distinct compound groups per class'
+    return value
+
+
 def equivalent(a,b):
     if isinstance(a,dict) and isinstance(b,dict):
         return a.keys()==b.keys() and all(equivalent(a[k],b[k]) for k in a)
@@ -26,7 +34,10 @@ def scalar(value):
 def check(actual):
     expected=ROOT/'results'
     for source in expected.glob('*.json'):
-        if not equivalent(json.loads(source.read_text()),json.loads((actual/source.name).read_text())):
+        left=json.loads(source.read_text());right=json.loads((actual/source.name).read_text())
+        if source.name=='metrics.json':
+            left,right=comparable_metadata(left),comparable_metadata(right)
+        if not equivalent(left,right):
             raise ValueError('JSON differs: '+source.name)
     tables=list(expected.glob('*.csv'))
     for source in tables:
