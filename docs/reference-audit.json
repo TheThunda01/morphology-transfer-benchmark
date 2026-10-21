@@ -1,0 +1,243 @@
+{
+  "review_date": "2026-10-20",
+  "scope": "Bibliographic and claim-level audit of substantive sources cited in authored documentation, provenance and literature synthesis. Frozen search records retain their historical screening evidence; excluded search hits are not implied to support project claims.",
+  "limits": [
+    "Source access is recorded per entry; abstract or metadata access is not full-text appraisal.",
+    "No new formal systematic review, duplicate screening, comprehensive supplement appraisal or independent biological validation was performed.",
+    "Existing data, metrics, licenses and frozen search logs were preserved."
+  ],
+  "references": [
+    {
+      "id": "pmid:36395727",
+      "source_type": "research_article",
+      "title": "Morphology and gene expression profiling provide complementary information for mapping cell state",
+      "authors": [
+        "Gregory P Way",
+        "Ted Natoli",
+        "Adeniyi Adeboye",
+        "Lev Litichevskiy",
+        "Andrew Yang",
+        "Xiaodong Lu",
+        "Juan C Caicedo",
+        "Beth A Cimini",
+        "Kyle Karhohs",
+        "David J Logan",
+        "Mohammad H Rohban",
+        "Maria Kost-Alimova",
+        "Kate Hartland",
+        "Michael Bornholdt",
+        "Srinivas Niranj Chandrasekaran",
+        "Marzieh Haghighi",
+        "Erin Weisbart",
+        "Shantanu Singh",
+        "Aravind Subramanian",
+        "Anne E Carpenter"
+      ],
+      "year": 2022,
+      "url": "https://doi.org/10.1016/j.cels.2022.10.001",
+      "doi": "10.1016/j.cels.2022.10.001",
+      "pmid": "36395727",
+      "volume": "13",
+      "issue": "11",
+      "pages": "911-923.e9",
+      "checked_on": "2026-10-20",
+      "access_level": "full_text",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Source study\u2019s Cell Painting/gene-expression comparison, 48-hour A549 context, usual micromolar doses, imperfect mechanism annotations and well-position effects."
+      ],
+      "limitations": [
+        "Complete main text was retrieved in two chunks; sections bearing on claims were inspected. Supplementary material was not comprehensively reviewed.",
+        "The repository does not reproduce its full assay comparison or full feature analysis."
+      ],
+      "corrections": [
+        "Completed and standardized the bibliography, including verified journal coordinates and PMID; earlier narrative-only citations now have full entries where needed."
+      ],
+      "journal": "Cell Systems"
+    },
+    {
+      "id": "pmid:39095341",
+      "source_type": "research_article",
+      "title": "Evaluating batch correction methods for image-based cell profiling",
+      "authors": [
+        "John Arevalo",
+        "Ellen Su",
+        "Jessica D Ewald",
+        "Robert van Dijk",
+        "Anne E Carpenter",
+        "Shantanu Singh"
+      ],
+      "year": 2024,
+      "url": "https://doi.org/10.1038/s41467-024-50613-5",
+      "doi": "10.1038/s41467-024-50613-5",
+      "pmid": "39095341",
+      "volume": "15",
+      "issue": "1",
+      "pages": "6516",
+      "checked_on": "2026-10-20",
+      "access_level": "full_text",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Batch correction must consider technical mixing and preservation of biological signal across experimental contexts."
+      ],
+      "limitations": [
+        "Complete main text was retrieved in two chunks; sections bearing on claims were inspected. Supplementary material was not comprehensively reviewed.",
+        "The JUMP benchmark does not validate this small LINCS panel or its particular normalization."
+      ],
+      "corrections": [
+        "Completed and standardized the bibliography, including verified journal coordinates and PMID; earlier narrative-only citations now have full entries where needed."
+      ],
+      "journal": "Nature Communications"
+    },
+    {
+      "id": "pmid:24312513",
+      "source_type": "research_article",
+      "title": "Multiplex cytological profiling assay to measure diverse cellular states",
+      "authors": [
+        "Sigrun M Gustafsdottir",
+        "Vebjorn Ljosa",
+        "Katherine L Sokolnicki",
+        "J Anthony Wilson",
+        "Deepika Walpita",
+        "Melissa M Kemp",
+        "Kathleen Petri Seiler",
+        "Hyman A Carrel",
+        "Todd R Golub",
+        "Stuart L Schreiber",
+        "Paul A Clemons",
+        "Anne E Carpenter",
+        "Alykhan F Shamji"
+      ],
+      "year": 2013,
+      "url": "https://doi.org/10.1371/journal.pone.0080999",
+      "doi": "10.1371/journal.pone.0080999",
+      "pmid": "24312513",
+      "volume": "8",
+      "issue": "12",
+      "pages": "e80999",
+      "checked_on": "2026-10-20",
+      "access_level": "abstract",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Multiplex cytological profiling measures diverse cell states."
+      ],
+      "limitations": [
+        "Metadata and abstract rechecked in this editorial pass; any earlier full-text inspection is documented separately in frozen search records.",
+        "No direct target or activity inference is established by morphology alone."
+      ],
+      "corrections": [
+        "Completed and standardized the bibliography, including verified journal coordinates and PMID; earlier narrative-only citations now have full entries where needed."
+      ],
+      "journal": "PLOS ONE"
+    },
+    {
+      "id": "lincs-source",
+      "source_type": "dataset",
+      "title": "LINCS Cell Painting source, profiling workflow and licensing",
+      "authors": [
+        "Broad Institute"
+      ],
+      "year": null,
+      "url": "https://github.com/broadinstitute/lincs-cell-painting/tree/061870127481dcd73c29df85ebcfddeac2ed0828",
+      "checked_on": "2026-10-20",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Level 3 stores annotated well aggregates; pipeline defines dose recoding; data/figures CC0 and code BSD 3-Clause."
+      ],
+      "limitations": [
+        "Readme and pipeline were inspected through the GitHub connector after web fetch failed. Dose field says millimoles/liter while the paper describes micromolar doses; unresolved. Full 136-object upstream raw download was not repeated."
+      ],
+      "corrections": [],
+      "version": "061870127481dcd73c29df85ebcfddeac2ed0828",
+      "alternate_urls": [
+        "https://github.com/broadinstitute/lincs-cell-painting/blob/061870127481dcd73c29df85ebcfddeac2ed0828/profiles/README.md",
+        "https://github.com/broadinstitute/lincs-cell-painting/blob/061870127481dcd73c29df85ebcfddeac2ed0828/profiles/profile_cells.py"
+      ]
+    },
+    {
+      "id": "cellpainting-gallery",
+      "source_type": "dataset",
+      "title": "Cell Painting Gallery dataset catalog and reuse guidance",
+      "authors": [
+        "Broad Institute"
+      ],
+      "year": null,
+      "url": "https://github.com/broadinstitute/cellpainting-gallery/tree/4e878a31d0c730cbe8366a2522c4aab7c599a3ff",
+      "checked_on": "2026-10-20",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Catalog identifies cpg0004-lincs and states CC0 data reuse with requested scientific attribution."
+      ],
+      "limitations": [
+        "Catalog is context; its whole-collection count is not the count in the specific paper or this extract."
+      ],
+      "corrections": [],
+      "version": "4e878a31d0c730cbe8366a2522c4aab7c599a3ff"
+    },
+    {
+      "id": "cellprofiler-measurements",
+      "source_type": "official_documentation",
+      "title": "CellProfiler measurement definitions",
+      "authors": [
+        "CellProfiler contributors"
+      ],
+      "year": null,
+      "url": "https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/modules/measurement.html",
+      "checked_on": "2026-10-20",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Terminology for shape and intensity measurements."
+      ],
+      "limitations": [
+        "Reference terminology only. Historical upstream measurement settings/version are not reconstructed by this later manual; no images reprocessed."
+      ],
+      "corrections": [],
+      "version": "4.2.8"
+    },
+    {
+      "id": "sklearn-ap",
+      "source_type": "official_documentation",
+      "title": "average_precision_score",
+      "authors": [
+        "scikit-learn developers"
+      ],
+      "year": null,
+      "url": "https://scikit-learn.org/1.8/modules/generated/sklearn.metrics.average_precision_score.html",
+      "checked_on": "2026-10-20",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "AP is a recall-weighted summary of precision, distinct from trapezoidal area."
+      ],
+      "limitations": [
+        "Documents source definitions or software behavior; does not independently validate this implementation."
+      ],
+      "corrections": [],
+      "version": "1.8"
+    },
+    {
+      "id": "sklearn-forest",
+      "source_type": "official_documentation",
+      "title": "RandomForestClassifier",
+      "authors": [
+        "scikit-learn developers"
+      ],
+      "year": null,
+      "url": "https://scikit-learn.org/1.8/modules/generated/sklearn.ensemble.RandomForestClassifier.html",
+      "checked_on": "2026-10-20",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Random forest estimator and tree-depth settings."
+      ],
+      "limitations": [
+        "Documents source definitions or software behavior; does not independently validate this implementation."
+      ],
+      "corrections": [],
+      "version": "1.8"
+    }
+  ]
+}

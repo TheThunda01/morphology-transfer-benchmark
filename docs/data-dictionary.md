@@ -1,5 +1,7 @@
 # Data dictionary
 
+Terminology: [glossary](glossary.md). Scientific and operational choices: [assumptions](assumptions.md).
+
 The source and snapshot are public experimental aggregate features, not patient records. Each input row is one physical plate/well, containing medians of single-cell measurements. Values are retained from the upstream numeric CSV; the compact input panel is selected in [config.json](../config.json).
 
 | Input fields | Meaning |
@@ -18,14 +20,16 @@ The source and snapshot are public experimental aggregate features, not patient 
 
 The source treatment value is exactly `10.0` for this selection. The publication describes the usual top dose as 10 μM, whereas the field name says millimoles/liter. We do not convert the field or infer potency from it. Controls can carry a nonzero recoded category despite raw concentration zero; control inclusion uses the sample label DMSO rather than the dose recode.
 
-Shape features: Area, Perimeter, Compactness, Eccentricity, Solidity, FormFactor, Extent, MajorAxisLength, MinorAxisLength. Intensity features: MeanIntensity, MedianIntensity and StdIntensity for DNA, ER, RNA, AGP and Mito channels. Image intensity is not a calibrated protein concentration. AGP includes actin/Golgi/plasma-membrane staining contributions; channel labels are not target measurements. Empty/NA/NaN entries are missing, not zero.
+Shape features: Area, Perimeter, Compactness, Eccentricity, Solidity, FormFactor, Extent, MajorAxisLength, MinorAxisLength. Intensity features: MeanIntensity, MedianIntensity and StdIntensity for DNA, ER, RNA, AGP and Mito channels. DNA means deoxyribonucleic acid, RNA ribonucleic acid, ER endoplasmic reticulum and Mito the mitochondrial channel. Image intensity is not a calibrated protein concentration. AGP includes actin/Golgi/plasma-membrane staining contributions; channel labels are not target measurements. Empty/NA/NaN entries are missing, not zero.
+
+Shape-feature definitions are version dependent. The [CellProfiler measurement guide](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/modules/measurement.html) explains the terminology, but it does not establish that every upstream historical setting equals that later software version. No images are reprocessed here.
 
 | Output | Unit of analysis |
 | --- | --- |
 | `annotation_audit.csv` | Candidate identity in the source annotation table, including absent or excluded groups |
 | `compound_audit.csv` | Observed related-compound group with replicate counts and gate status |
 | `control_audit.csv` | Plate, number of DMSO controls, unusable scale counts, descriptive control shift |
-| `class_support.csv` | Requested class, included/excluded status and independent group counts |
+| `class_support.csv` | Requested class, included/excluded status and distinct group counts |
 | `split_manifest.csv` | One split assignment per retained related-compound group |
 | `metadata_distribution.csv` | Plate-map counts within each split |
 | `retrieval_queries.csv` | Test query, reference counts, eligibility, top match and average precision |

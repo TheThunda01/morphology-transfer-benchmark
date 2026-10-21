@@ -1,5 +1,7 @@
 # Why this project exists
 
+Terminology: [glossary](glossary.md). Scientific and operational choices: [assumptions](assumptions.md).
+
 A compound can change a cell in several ways at once: its shape, internal organization, staining patterns, and the distribution of those measurements across a population. That makes morphology interesting as a broad readout of a cellular response. It also creates a difficult question: when two compounds look similar in this readout, are we recovering a useful biological relationship, or simply a shared experimental artifact?
 
 This project explores that question using public LINCS Cell Painting profiles from A549 cells. The original study compared morphology with gene-expression profiling and found that the assays captured partly overlapping, partly distinct information. It also described the difficulty of recovering compound mechanisms from either assay alone. Those findings motivate this benchmark; they are not results reproduced or claimed here. [Way et al., 2022](https://pubmed.ncbi.nlm.nih.gov/36395727/)

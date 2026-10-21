@@ -1,5 +1,7 @@
 # Literature and practice review
 
+Terminology: [glossary](glossary.md). Scientific and operational choices: [assumptions](assumptions.md).
+
 ## Question and scope
 
 The question is whether morphological similarity recovers a prespecified annotation for a compound group that was absent from training, within a small, explicitly selected panel. This is a rapid review to guide an inspectable implementation. It is not a systematic review of Cell Painting, a comparison of every profiling method, or evidence that morphology identifies a compound's molecular target.
@@ -12,7 +14,7 @@ Searches were performed on **2026-10-20**. The [machine-readable log](search-log
 
 The recorded PubMed searches returned **31 unique candidate identifiers**. Three papers were retained for the implementation synthesis below. The other 28 were not carried into detailed synthesis; we do not present this as a complete abstract-by-abstract quality assessment. The broader query was paginated through all 26 reported results. Retrieval identifiers are recorded as returned, including identifiers whose publication chronology was not independently checked. No scientific claim here relies on those unretained records.
 
-Full-text access was partial: the first 35,000 of 75,826 characters for Way et al., the first 26,000 characters for Arevalo et al., and the first 8,000 characters for Gustafsdottir et al. This is excerpt inspection, not complete article or supplement coverage. Supplementary web result totals and full rankings were not retained. The log therefore leaves their counts unknown rather than inventing a screening denominator.
+In the original logged review, full-text access was partial: the first 35,000 of 75,826 characters for Way et al., the first 26,000 characters for Arevalo et al., and the first 8,000 characters for Gustafsdottir et al. This is excerpt inspection, not complete article or supplement coverage. Supplementary web result totals and full rankings were not retained. The log therefore leaves their counts unknown rather than inventing a screening denominator.
 
 ## What the sources support
 
@@ -28,12 +30,14 @@ The official [LINCS repository at the pinned commit](https://github.com/broadins
 
 The review informed concrete safeguards. We retain controls and metadata alongside the compact profile matrix; normalize with same-plate DMSO controls; show control shifts, exclusions and class support; and keep the supplied related-identity groups together. Imputation, scaling and feature checks are fitted on training compounds. Retrieval excludes both matching identity groups and shared plate maps, and reports queries with no eligible positive reference instead of relaxing exclusions.
 
-Eight mechanism labels were requested before evaluating scores. Proteasome inhibitors fail the configured minimum after filtering, leaving seven scored classes; the input rows and exclusion audit remain available. Small independent-compound support also led us to compare transparent retrieval, regularized logistic regression, a restricted random forest and a prior baseline, without adding a neural network. The papers motivate caution; they do not validate our numerical thresholds, split, feature panel or models. Those are declared implementation choices in [config.json](../config.json).
+Eight mechanism labels were requested before evaluating scores. Proteasome inhibitors fail the configured minimum after filtering, leaving seven scored classes; the input rows and exclusion audit remain available. Small distinct-compound support also led us to compare transparent retrieval, regularized logistic regression, a restricted random forest and a prior baseline, without adding a neural network. The papers motivate caution; they do not validate our numerical thresholds, split, feature panel or models. Those are declared implementation choices in [config.json](../config.json).
 
 ## Remaining work
 
-Useful follow-up would inspect the complete source articles and supplements, extend the search beyond PubMed, and evaluate more than one fixed split without selecting a favorable result. An independent laboratory or held-out experimental batch would be more informative about transfer than another random compound split. Chemical-family overlap, concentration dependence, uncertain annotations and the effects of stronger batch correction also need dedicated analysis. Any expansion should set eligibility and validation rules before examining its final test results.
+The editorial pass retrieved the remaining Way and Arevalo main-text chunks and checked sections relevant to dose, controls and batch structure; it did not comprehensively assess their supplements. Useful follow-up would inspect the complete supplementary materials, extend the search beyond PubMed, and evaluate more than one fixed split without selecting a favorable result. An independent laboratory or held-out experimental batch would be more informative about transfer than another random compound split. Chemical-family overlap, concentration dependence, uncertain annotations and the effects of stronger batch correction also need dedicated analysis. Any expansion should set eligibility and validation rules before examining its final test results.
 
 ## Limits of this review
+
+The [reference audit](reference-audit.json) distinguishes this editorial recheck from the preserved search record. Grouping by a supplied connectivity key prevents exact-identity reuse; it does not establish statistical independence. Legacy generated reports and figure labels using “independent groups” should be read as counts of these distinct identity groups, not proof of biological replication.
 
 This is a narrow, single-pass implementation review, without duplicate screening, a formal risk-of-bias instrument, registered protocol, citation chasing or exhaustive method coverage. It combines a limited literature search with targeted official-source inspection. We report neither a pooled effect nor a general claim that this workflow is validated. The executable result answers a within-panel benchmark question under its stated assumptions; it does not establish target identity, therapeutic efficacy or transfer to unseen cell types, doses or laboratories.

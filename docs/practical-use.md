@@ -1,5 +1,7 @@
 # Practical use
 
+Terminology: [glossary](glossary.md). Scientific and operational choices: [assumptions](assumptions.md).
+
 ## Where this fits
 
 Use this repository to examine a precise question: within a small annotated compound panel, does an unseen compound's measured morphology resemble training compounds with the same label? It is useful for learning phenotype profiling, auditing label support, and checking what a simple model can infer under an explicit split. It is not a target-identification service or a decision tool for treatment, safety or compound design.

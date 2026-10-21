@@ -1,5 +1,7 @@
 # Data provenance and reuse
 
+Terminology: [glossary](glossary.md). Scientific and operational choices: [assumptions](assumptions.md).
+
 This is real public experimental data, not a simulation. The bundled file is a deliberately small extract of the Broad Institute LINCS Cell Painting **Pilot1** A549 profiles. We use raw annotated Level 3 well medians and preserve their selected values. We do not use the pre-normalized, feature-selected or spherized levels, whose fitted transformations could cross this benchmark's held-out compounds.
 
 ## Exact source
