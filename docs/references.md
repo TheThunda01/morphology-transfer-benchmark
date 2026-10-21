@@ -1,5 +1,7 @@
 # References and how they are used
 
+Targeted checks from 21 October 2026 are recorded in the [maintenance review](review-2026-10-21.md). Earlier access dates and search records remain unchanged.
+
 Checked on **20 October 2026**. The [reference audit](reference-audit.json) records access and metadata status for every source below. An abstract check is not a full-text appraisal. These sources support background or method choices; none independently validates this repository’s results. See the [glossary](glossary.md) and [assumptions](assumptions.md) for interpretation.
 
 ## Research and methods

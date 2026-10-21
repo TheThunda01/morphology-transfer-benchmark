@@ -25,7 +25,11 @@ The extractor examines 136 raw annotated plate objects, containing 52,223 rows. 
 
 The 72 measurements are fixed shape and intensity summaries across Cells, Cytoplasm and Nuclei, with five staining channels. They are a tractable panel, not an optimized feature set. A row is a well-level median of source image-derived cell measurements; it is not an individual cell or a patient record. See the [data dictionary](data-dictionary.md).
 
-The source's `Metadata_mmoles_per_liter` field is **10.0** for the selected treatment rows, whereas the paper describes the usual concentration range in micromolar units. This unresolved discrepancy is preserved explicitly. We select the upstream ordinal dose category; we do not silently convert the value or assert that its field-name unit is correct. Any absolute-dose interpretation needs reconciliation with the original experiment metadata.
+The source's `Metadata_mmoles_per_liter` field is **10.0** for the selected treatment rows, whereas the paper describes the usual concentration range in micromolar units. We select the upstream ordinal dose category; we do not convert the value or treat its field-name unit as verified.
+
+The 21 October source recheck narrowed the discrepancy. The paper's **Selection of compounds for testing** section lists 0.04, 0.12, 0.37, 1.11, 3.33 and 10 μM. The pinned [profile pipeline](https://github.com/broadinstitute/lincs-cell-painting/blob/061870127481dcd73c29df85ebcfddeac2ed0828/profiles/profile_cells.py) passes the raw field directly to the numeric mapping `[0.04, 0.12, 0.37, 1.11, 3.33, 10, 20]`; the [recoding function](https://github.com/broadinstitute/lincs-cell-painting/blob/061870127481dcd73c29df85ebcfddeac2ed0828/utils/dose.py) returns the nearest mapping entry's one-based index. Thus category 6 corresponds to numeric 10 in that code, with no unit conversion. This is consistent with the paper's intended 10 μM condition and a misleading metadata name, but the code alone cannot verify the physical concentration in each well. Original per-plate dispensing records were not inspected. Absolute-dose matching to another study remains conditional on resolving that provenance question.
+
+The hashed TSV and CSV metadata are stored with LF line endings. Git attributes preserve those bytes on Windows as well as Unix; disabling the checksum check is not an alternative to preserving the source snapshot.
 
 ## Rebuilding and licensing
 
