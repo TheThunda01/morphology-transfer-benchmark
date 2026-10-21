@@ -30,7 +30,13 @@ Missingness/variance feature checks, median imputation, and standardization (sub
 
 Each test group queries the training gallery. Remove its own InChIKey14 and every reference sharing any of its plate maps. If no reference or no same-label reference remains, the query is visibly ineligible; exclusions are never relaxed. Cosine similarity, the cosine of the angle between feature vectors, ranks remaining profiles. Average precision (AP) uses binary same-annotation relevance and groups tied scores through scikit-learn’s threshold-based calculation; deterministic identity ordering resolves top-1 score ties. The [scikit-learn 1.8 definition](https://scikit-learn.org/1.8/modules/generated/sklearn.metrics.average_precision_score.html) weights precision by changes in recall. The random-order reference below assumes a complete ordering, so it is not a tie-adjusted null distribution.
 
-For a gallery of size n with m positives, random top-1 expectation is m/n. Expected average precision for a uniformly random complete ranking is H_n/n + (m−1)(n−H_n)/(n(n−1)), with the n=1 case handled separately. These are chance references, not biological null tests. Macro F1, the equal-weight mean of class-specific harmonic means of precision and recall, weights retained classes equally; accuracy weights test groups equally.
+For a gallery of size $`n`$ with $`m`$ positives, the random top-1 match probability is $`m/n`$. Expected average precision for a uniformly random complete ranking is
+
+```math
+\mathbb{E}[\mathrm{AP}] = \frac{H_n}{n} + \frac{(m-1)(n-H_n)}{n(n-1)}, \qquad n>1,
+```
+
+where $`H_n = \sum_{k=1}^{n} 1/k`$ is the $`n`$th harmonic number. The $`n=1`$ case is handled separately. These are chance references, not biological null tests. Macro F1, the equal-weight mean of class-specific harmonic means of precision and recall, weights retained classes equally; accuracy weights test groups equally.
 
 Descriptive 95% percentile intervals resample fixed test-group outcomes 2,000 times. They omit uncertainty from training, choosing this split, measurement, annotations and chemical dependence. One test group represents 1/14 of overall accuracy. Per-class denominators are reported because some classes have only one test group.
 
