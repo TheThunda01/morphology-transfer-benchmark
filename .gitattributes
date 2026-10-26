@@ -4,3 +4,5 @@
 *.json text eol=lf
 *.py text eol=lf
 *.gz binary
+# Frozen reference tables retain their original CSV-writer line endings.
+results/*.csv -text

@@ -4,7 +4,7 @@
 
 ## Why this project
 
-Cell Painting is an imaging assay that summarizes cellular appearance after a perturbation, such as a chemical treatment. That gives chemistry a biological readout, but similarity in appearance is only indirect evidence about mechanism. This project examines that distinction using public profiles from A549, a human lung cancer-derived cell line, in the Library of Integrated Network-based Cellular Signatures (LINCS) experiment, with explicit compound and plate-map exclusions.
+Cell Painting is an imaging assay that summarizes cellular appearance after a perturbation, such as a chemical treatment. That gives chemistry a biological readout, but similarity in appearance is only indirect evidence about mechanism. This project examines that distinction using public profiles from A549, a human lung cancer-derived cell line, in the Library of Integrated Network-based Cellular Signatures (LINCS) experiment. Both retrieval and classification hold out compound identities; retrieval also excludes references that share a plate map with the query.
 
 [Project background](docs/project-context.md) · [Biology and concepts](docs/biology-and-concepts.md)
 
@@ -12,7 +12,7 @@ Cell Painting is an imaging assay that summarizes cellular appearance after a pe
 
 The repository packages a compact, raw-data-derived panel: 3,674 wells, including 3,264 dimethyl sulfoxide (DMSO) solvent controls, and 72 fixed shape/intensity measurements. Eight mechanism classes were selected before model scores were calculated. Seven passed the prespecified distinct-identity support rule; the excluded proteasome class remains visible in the audits.
 
-It uses control-only plate normalization, keeps related compound identities together, and assigns 76 eligible groups to fixed training, validation, and test sets. It ranks reference profiles using cosine similarity (similarity of feature-vector directions) and compares the ranks with a random-order expectation. It also compares a class-frequency baseline, logistic regression and a small random forest, two standard classification models. It does not process images or discover new drug targets.
+It uses control-only plate normalization, keeps related compound identities together, and assigns 76 eligible groups to fixed training, validation, and test sets. It ranks reference profiles using cosine similarity (similarity of feature-vector directions) and compares the ranks with a random-order expectation. It also compares a class-frequency baseline, logistic regression and a small random forest, two standard classification models. The classifier splits can share plate maps, so their scores do not measure transfer to unseen plate layouts. It does not process images or discover new drug targets.
 
 ## Quick start
 
@@ -33,7 +33,7 @@ The fixed split has **48 training, 14 validation, and 14 test groups**. All 14 t
 
 | Readout | Checked-in result |
 | --- | ---: |
-| Mean average precision (AP; a score for the ranked relevant references) of cosine retrieval | 0.463 |
+| Mean of per-query average precision (AP; a score for the ranked relevant references) of cosine retrieval | 0.463 |
 | Random-order expected mean average precision | 0.224 |
 | Retrieval top-1 matches | 8 / 14 |
 | Prior-only classifier macro F1 (equal-weight mean of per-class F1 scores, each the harmonic mean of precision and recall) | 0.050 |
