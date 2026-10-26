@@ -4,15 +4,19 @@
 
 ## Why this project
 
-Cell Painting is an imaging assay that summarizes cellular appearance after a perturbation, such as a chemical treatment. That gives chemistry a biological readout, but similarity in appearance is only indirect evidence about mechanism. This project examines that distinction using public profiles from A549, a human lung cancer-derived cell line, in the Library of Integrated Network-based Cellular Signatures (LINCS) experiment. Both retrieval and classification hold out compound identities; retrieval also excludes references that share a plate map with the query.
+Cell Painting summarizes cellular appearance after a perturbation, such as a chemical treatment. Similar appearance can suggest a biological relationship between compounds, but it provides only indirect evidence about mechanism. This project examines that distinction using public profiles from A549, a human lung cancer-derived cell line, in the Library of Integrated Network-based Cellular Signatures (LINCS) experiment.
+
+Both retrieval and classification hold out compound identities. Retrieval also excludes references that share a plate map with the query.
 
 [Project background](docs/project-context.md) · [Biology and concepts](docs/biology-and-concepts.md)
 
 ## What it does
 
-The repository packages a compact, raw-data-derived panel: 3,674 wells, including 3,264 dimethyl sulfoxide (DMSO) solvent controls, and 72 fixed shape/intensity measurements. Eight mechanism classes were selected before model scores were calculated. Seven passed the prespecified distinct-identity support rule; the excluded proteasome class remains visible in the audits.
+The repository includes a compact panel derived from raw data: 3,674 wells, including 3,264 dimethyl sulfoxide (DMSO) solvent controls, and 72 fixed shape and intensity measurements. The panel specifies eight mechanism classes chosen before calculating model scores. Seven passed the prespecified rule for the number of distinct identities; the excluded proteasome class remains visible in the audits.
 
-It uses control-only plate normalization, keeps related compound identities together, and assigns 76 eligible groups to fixed training, validation, and test sets. It ranks reference profiles using cosine similarity (similarity of feature-vector directions) and compares the ranks with a random-order expectation. It also compares a class-frequency baseline, logistic regression and a small random forest, two standard classification models. The classifier splits can share plate maps, so their scores do not measure transfer to unseen plate layouts. It does not process images or discover new drug targets.
+The analysis normalizes each plate using controls only, keeps related compound identities together, and assigns 76 eligible groups to fixed training, validation, and test sets. For retrieval, it ranks reference profiles using cosine similarity, which compares feature-vector directions, and compares the ranks with a random-order expectation.
+
+For classification, it compares a class-frequency baseline with logistic regression and a small random forest. The classifier splits can share plate maps, so their scores do not measure transfer to unseen plate layouts. The analysis does not process images or discover new drug targets.
 
 ## Quick start
 
@@ -31,12 +35,14 @@ The optional `python scripts/fetch_snapshot.py --output /tmp/new-profiles.csv.gz
 
 The fixed split has **48 training, 14 validation, and 14 test groups**. All 14 test queries retain a positive training reference after excluding the same compound identity and every shared plate map.
 
+Average precision (AP) scores the ranking of relevant references for each query; the table reports its mean across queries. Macro F1 weights each class equally when averaging class-specific F1 scores, each the harmonic mean of precision and recall.
+
 | Readout | Checked-in result |
 | --- | ---: |
-| Mean of per-query average precision (AP; a score for the ranked relevant references) of cosine retrieval | 0.463 |
+| Cosine retrieval mean AP | 0.463 |
 | Random-order expected mean average precision | 0.224 |
 | Retrieval top-1 matches | 8 / 14 |
-| Prior-only classifier macro F1 (equal-weight mean of per-class F1 scores, each the harmonic mean of precision and recall) | 0.050 |
+| Prior-only classifier macro F1 | 0.050 |
 | Logistic classifier macro F1 | 0.496 |
 | Random forest macro F1 | 0.490 |
 
@@ -46,9 +52,9 @@ These are small-sample, within-panel results. One changed test prediction moves 
 
 ## Practical use and limitations
 
-The useful output is a traceable comparison between a morphological neighborhood and existing annotations. It can show where a proposed relationship is worth checking, where no valid reference remains, or where a simple model fails. Similarity does not demonstrate a direct target, a causal mechanism, efficacy, or safety.
+The output compares compounds with similar profiles against existing annotations. It helps identify relationships to investigate, queries that lack a valid reference, and cases where simple models fail. Similarity does not demonstrate a direct target, a causal mechanism, efficacy, or safety.
 
-The source has fixed well positions, one cell line and one exposure duration. Compound-disjoint evaluation does not remove every plate, positional, annotation, or chemistry bias. The source concentration column name conflicts with units in the publication; this analysis preserves the numerical source value and selects its documented dose category. No neural model is forced onto the small number of distinct groups.
+The source has fixed well positions, one cell line and one exposure duration. Holding out compound identities does not remove every plate, positional, annotation, or chemistry bias. The source concentration column name conflicts with units in the publication; this analysis preserves the numerical source value and selects its documented dose category. The small number of distinct groups also limits modeling: no neural model is fitted.
 
 ## Documentation
 

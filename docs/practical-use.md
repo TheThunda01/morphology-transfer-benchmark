@@ -8,7 +8,9 @@ Use this repository to examine a precise question: within a small annotated comp
 
 ## Input and output contract
 
-The default input is the checked-in gzip snapshot, its JSON manifest, two exact upstream metadata tables, and `config.json`. `--data-dir` accepts another directory with that complete structure, but a compatible schema and matching manifest do not prove experimental comparability. The fixed source selection must agree with configuration. Hash mismatches, malformed CSV rows, duplicate plate/well keys, unexpected cell lines or dose categories, missing identities, and insufficient control or class support stop the run with exit code 2.
+By default, the analysis uses the checked-in gzip snapshot, its JSON manifest, two exact upstream metadata tables, and `config.json`. `--data-dir` accepts another directory with that complete structure, but a compatible schema and matching manifest do not prove that experiments are comparable. The fixed source selection must agree with the configuration.
+
+The run stops with exit code 2 for hash mismatches, malformed CSV rows, duplicate plate/well keys, unexpected cell lines or dose categories, missing identities, or insufficient control or class support.
 
 Successful runs create `metrics.json`, a readable `report.md`, an SVG, and twelve CSV audit/result tables. `annotation_audit.csv` includes absent candidates; `compound_audit.csv` includes quality exclusions; `class_support.csv` distinguishes requested and scored classes. `retrieval_queries.csv` preserves each query's eligible reference and positive-reference counts. No references, no positives after exclusions, or a zero query vector yields an explicit ineligible status, not a zero score. The [dictionary](data-dictionary.md) defines all tables.
 
@@ -33,7 +35,9 @@ If replacing data, reconcile feature definitions, units, concentration and expos
 
 ## Known limits
 
-The panel covers one A549 setting and a selected dose category. Its annotations can be incomplete, context-dependent or wrong; distinct related chemistries can cross a connectivity-identity split. Models can share plate maps across split groups, although primary retrieval excludes them pairwise. Negative-control normalization can reduce certain shifts but cannot establish their absence. The small bootstrap intervals are conditional descriptions of fixed held-out outcomes and omit training, split, measurement and label uncertainty. No independent experiment validates these particular predictions.
+The panel covers one A549 setting and a selected dose category. Its annotations can be incomplete, context-dependent or wrong, and related chemicals with distinct connectivity identities can fall in different splits. Models can share plate maps across split groups, although primary retrieval excludes them pairwise. Negative-control normalization can reduce certain shifts but cannot establish their absence.
+
+The bootstrap intervals describe fixed held-out outcomes conditional on this analysis. They omit uncertainty from training, split choice, measurement and labels. No independent experiment validates these particular predictions.
 
 ## Next improvements
 

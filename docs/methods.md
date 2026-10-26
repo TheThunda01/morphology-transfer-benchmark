@@ -2,7 +2,7 @@
 
 Terminology: [glossary](glossary.md). Scientific and operational choices: [assumptions](assumptions.md).
 
-The scientific question is deliberately narrow: within a prespecified panel, do morphological profiles place unseen related-compound groups near training compounds with the same annotation? The checked-in [configuration](../config.json) fixes the selection and model choices. No test score was used to choose classes or features.
+The analysis asks whether morphological profiles of unseen related-compound groups resemble training compounds with the same annotation within a prespecified panel. The checked-in [configuration](../config.json) fixes the selection and model choices. No test score was used to choose classes or features.
 
 ## Selection and support gate
 
@@ -12,7 +12,7 @@ The 72 features are a fixed panel of nine shape measurements and three intensity
 
 The extracted snapshot has 410 treatment wells and 3,264 controls. One annotated group is absent at the chosen dose; another lacks three distinct replicate plates. After these gates, proteasome inhibitors have only five groups and fail the prespecified minimum of six. Their source rows stay in the input and audit but do not enter scoring. The remaining seven classes contain 76 groups. [Annotation](../results/annotation_audit.csv), [compound](../results/compound_audit.csv), and [class support](../results/class_support.csv) tables show each decision.
 
-InChIKey14 groups (the first 14 characters of a chemical connectivity identifier) collapse the supplied connectivity identifier, keeping matching identities across names, doses and replicates together. This is not a complete chemical-family or salt-normalization solution. Related but distinct structures can remain on opposite sides of a split.
+Grouping by InChIKey14 (the first 14 characters of a chemical connectivity identifier) keeps matching identities together across names, doses and replicates. This does not fully group chemical families or normalize salt forms. Related but distinct structures can remain on opposite sides of a split.
 
 ## Normalization and compound profiles
 
@@ -24,11 +24,15 @@ Each compound-group profile is the featurewise median across its selected replic
 
 Within each retained class, sort group identifiers, permute with seed 27182, allocate the floored 20% to test, another floored 20% to validation, and the remainder to training; each held-out portion has at least one group. At least three training identities per class are required. The resulting counts are 48/14/14. All input rows for a group inherit its one assignment.
 
-Missingness/variance feature checks, median imputation, and standardization (subtracting the mean and dividing by the standard deviation) are fitted only on training compound profiles. Validation chooses logistic inverse regularization strength C from 0.01, 0.1, 1, 10 and forest maximum depth from 2, 4; ties select the first, more regularized candidate. The forest has 150 trees and a fixed seed. Models remain fitted on training data; no refit uses validation or test labels. A prior-only classifier supplies a baseline. No neural network is fitted because class support is small.
+Only training compound profiles determine which features pass missingness and variance checks, the medians used to fill missing values, and the means and standard deviations used for standardization. Validation chooses logistic inverse regularization strength C from 0.01, 0.1, 1, 10 and forest maximum depth from 2, 4; ties select the first, more regularized candidate. The forest has 150 trees and a fixed seed.
+
+Models remain fitted on training data; no refit uses validation or test labels. A prior-only classifier supplies a baseline. No neural network is fitted because class support is small.
 
 ## Retrieval and denominators
 
-Each test group queries the training gallery. Remove its own InChIKey14 and every reference sharing any of its plate maps. If no reference or no same-label reference remains, the query is visibly ineligible; exclusions are never relaxed. Cosine similarity, the cosine of the angle between feature vectors, ranks remaining profiles. Average precision (AP) uses binary same-annotation relevance and groups tied scores through scikit-learn’s threshold-based calculation; deterministic identity ordering resolves top-1 score ties. The [scikit-learn 1.8 definition](https://scikit-learn.org/1.8/modules/generated/sklearn.metrics.average_precision_score.html) weights precision by changes in recall. The random-order reference below assumes a complete ordering, so it is not a tie-adjusted null distribution.
+Each test group queries the training gallery. The analysis removes its own InChIKey14 and every reference sharing any of its plate maps. If no reference or no same-label reference remains, it marks the query ineligible and keeps the exclusions in place.
+
+Cosine similarity, the cosine of the angle between feature vectors, ranks the remaining profiles. Average precision (AP) treats a reference as relevant when it has the same annotation and groups tied scores through scikit-learn’s threshold-based calculation. Deterministic identity ordering resolves top-1 score ties. The [scikit-learn 1.8 definition](https://scikit-learn.org/1.8/modules/generated/sklearn.metrics.average_precision_score.html) weights precision by changes in recall. The random-order reference below assumes a complete ordering, so it is not a tie-adjusted null distribution.
 
 For a gallery of size $`n`$ with $`m`$ positives, the random top-1 match probability is $`m/n`$. Expected average precision for a uniformly random complete ranking is
 
