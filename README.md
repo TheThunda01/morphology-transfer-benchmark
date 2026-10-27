@@ -50,6 +50,12 @@ Average precision (AP) scores the ranking of relevant references for each query;
 
 These are small-sample, within-panel results. One changed test prediction moves accuracy by **7.14 percentage points**. The [report](results/report.md) and [metrics](results/metrics.json) give denominators and descriptive uncertainty; the difference between learned models does not establish superiority.
 
+### Inspect the queries behind the mean
+
+![Observed and random-expected AP for each query](docs/figures/query-explorer/query-explorer.png)
+
+The [query explorer](docs/query-explorer.md) pairs each observed AP with the chance expectation for its own retained gallery. Hover reveals positive/total reference counts, annotation, nearest compound and top-1 outcome. Its HTML table preserves ineligible queries as explicitly unscored instead of zero. The builder checks test identities and denominators without changing the saved analysis.
+
 ## Practical use and limitations
 
 The output compares compounds with similar profiles against existing annotations. It helps identify relationships to investigate, queries that lack a valid reference, and cases where simple models fail. Similarity does not demonstrate a direct target, a causal mechanism, efficacy, or safety.

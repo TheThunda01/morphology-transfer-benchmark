@@ -6,3 +6,6 @@
 *.gz binary
 # Frozen reference tables retain their original CSV-writer line endings.
 results/*.csv -text
+
+# Preserve the embedded Plotly distribution as generated.
+docs/figures/query-explorer/query-explorer.html -whitespace linguist-generated
