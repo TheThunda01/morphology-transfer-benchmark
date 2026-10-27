@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "plotly_version": "7.1.0",
+  "source_sha256_lf_normalized": {
+    "retrieval_queries.csv": "bf610e11f3f6248b5e31f39e36b19952a188824efd149eaa1ca28c086878854b",
+    "split_manifest.csv": "e2d57552aa04a0de718fef2630a60b5bb3a2119c6d11ccd19ade4a295f577080"
+  },
+  "queries": 14,
+  "eligible": 14,
+  "scope": "Each connector compares observed average precision with the complete-random-ranking expectation for that query\u2019s retained gallery. Own-identity and shared-plate-map exclusions remain in force. The random expectation is not a confidence interval or a biological null test. An annotation match does not demonstrate a molecular target or mechanism. Ineligible queries remain in the table and are not plotted as zero. The chart preserves saved query order and shows no classifier results; no model was refit."
+}
