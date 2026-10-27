@@ -11,3 +11,7 @@ The scope is deliberately narrow: a prespecified panel of annotated mechanisms, 
 Interpreting a match requires attention to experimental structure. Controls help put measurements from different plates on a comparable scale, but they do not erase every batch or position effect. Repeated wells help characterize a compound; they do not create additional independent compounds. A successful match within this selected panel does not identify a new drug target or establish efficacy in a patient. [Arevalo et al., 2024](https://pubmed.ncbi.nlm.nih.gov/39095341/)
 
 Use the repository to trace the public source data, check which compounds and queries are eligible, compare simple baselines, and examine failures alongside successes. It reports no new laboratory experiment. Start with [the biology and concepts](biology-and-concepts.md), then use [the methods](methods.md) to follow the analysis choices.
+
+## Where this fits
+
+The [molecular solubility benchmark](https://github.com/TheThunda01/molecular-solubility-benchmark) asks a related evaluation question using chemical properties. Here the measurements describe cellular appearance. Reading them together highlights how the measured endpoint and the held-out groups determine the claim; their outputs are not combined into a prediction pipeline.

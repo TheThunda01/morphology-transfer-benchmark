@@ -10,6 +10,8 @@ Both retrieval and classification hold out compound identities. Retrieval also e
 
 [Project background](docs/project-context.md) · [Biology and concepts](docs/biology-and-concepts.md)
 
+In [From biological measurements to better experiments](https://github.com/TheThunda01/TheThunda01/blob/main/PROJECT_GUIDE.md), this is a supporting study of fair comparison. It asks what a cellular-profile match supports when compound identities are withheld, keeping experimental structure and alternative explanations visible.
+
 ## What it does
 
 The repository includes a compact panel derived from raw data: 3,674 wells, including 3,264 dimethyl sulfoxide (DMSO) solvent controls, and 72 fixed shape and intensity measurements. The panel specifies eight mechanism classes chosen before calculating model scores. Seven passed the prespecified rule for the number of distinct identities; the excluded proteasome class remains visible in the audits.
