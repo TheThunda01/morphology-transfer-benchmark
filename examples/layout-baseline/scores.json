@@ -1,0 +1,36 @@
+{
+  "train_groups": 48,
+  "test_groups": 14,
+  "test_groups_with_a_training_map": 13,
+  "class_support_test": {
+    "Aurora kinase inhibitor": 1,
+    "EGFR inhibitor": 3,
+    "HDAC inhibitor": 2,
+    "MEK inhibitor": 2,
+    "PI3K inhibitor": 1,
+    "topoisomerase inhibitor": 3,
+    "tubulin polymerization inhibitor": 2
+  },
+  "scores": {
+    "layout_only": {
+      "correct": 1,
+      "accuracy": 0.07142857142857142,
+      "macro_f1": 0.09523809523809523
+    },
+    "prior": {
+      "correct": 3,
+      "accuracy": 0.21428571428571427,
+      "macro_f1": 0.05042016806722689
+    },
+    "logistic": {
+      "correct": 7,
+      "accuracy": 0.5,
+      "macro_f1": 0.4959183673469388
+    },
+    "random_forest": {
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "macro_f1": 0.489795918367347
+    }
+  }
+}

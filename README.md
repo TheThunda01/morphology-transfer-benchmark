@@ -1,16 +1,10 @@
 # Morphology transfer benchmark
 
-**Do compounds with the same annotated mechanism produce similar cellular profiles when the query compound is absent from training?**
+Can you recognize a compound’s annotated mechanism from the appearance of cells exposed to it? This benchmark uses Cell Painting measurements from A549 cells, a human lung cancer cell line, to compare compounds the model has never seen with compounds in its training set.
 
 ## Why this project
 
-Cell Painting summarizes cellular appearance after a perturbation, such as a chemical treatment. Similar appearance can suggest a biological relationship between compounds, but it provides only indirect evidence about mechanism. This project examines that distinction using public profiles from A549, a human lung cancer-derived cell line, in the Library of Integrated Network-based Cellular Signatures (LINCS) experiment.
-
-Both retrieval and classification hold out compound identities. Retrieval also excludes references that share a plate map with the query.
-
-[Project background](docs/project-context.md) · [Biology and concepts](docs/biology-and-concepts.md)
-
-In [From biological measurements to better experiments](https://github.com/TheThunda01/TheThunda01/blob/main/PROJECT_GUIDE.md), this is a supporting study of fair comparison. It asks what a cellular-profile match supports when compound identities are withheld, keeping experimental structure and alternative explanations visible.
+A close match can reflect the response of the cells or the arrangement of an experiment. The retrieval analysis asks whether similar profiles share an annotation after removing training examples from the same plate map. A companion classification experiment measures how much the plate map and well position can predict on their own. [Project background](docs/project-context.md) · [Biology and concepts](docs/biology-and-concepts.md) · [Portfolio guide](https://github.com/TheThunda01/TheThunda01/blob/main/PROJECT_GUIDE.md)
 
 ## What it does
 
@@ -52,11 +46,21 @@ Average precision (AP) scores the ranking of relevant references for each query;
 
 These are small-sample, within-panel results. One changed test prediction moves accuracy by **7.14 percentage points**. The [report](results/report.md) and [metrics](results/metrics.json) give denominators and descriptive uncertainty; the difference between learned models does not establish superiority.
 
+### How much can plate layout predict on its own?
+
+Thirteen of the 14 test groups share a plate map with a training group. To measure the signal available from layout, a separate logistic regression uses only plate map and well position. It learns the category vocabulary on the 48 training groups, ignores unseen categories, and uses a fixed regularization setting (C = 1). The comparison scores the same 14 groups for all four models.
+
+![Macro F1 on 14 groups, prior 0.050, layout only 0.095, morphology logistic 0.496 and morphology forest 0.490](examples/layout-baseline/comparison.png)
+
+The layout model correctly classified **1 of 14 groups**, compared with 3 for the prior and 7 for morphology logistic regression. Macro F1 weights each of the seven classes equally. This diagnostic measures one type of layout signal on a small panel. Batch effects can also enter through the measured cell features.
+
+Run `python -m morphology.layout_baseline --output reproduced-results/layout` to reproduce the chart from the frozen assignments and group audit. The [score table](examples/layout-baseline/scores.json) includes class denominators.
+
 ### Inspect the queries behind the mean
 
 ![Observed and random-expected AP for each query](docs/figures/query-explorer/query-explorer.png)
 
-The [query explorer](docs/query-explorer.md) pairs each observed AP with the chance expectation for its own retained gallery. Hover reveals positive/total reference counts, annotation, nearest compound and top-1 outcome. Its HTML table preserves ineligible queries as explicitly unscored instead of zero. The builder checks test identities and denominators without changing the saved analysis.
+For binimetinib, six of 46 eligible reference groups shared its annotation. Its nearest reference was one of those six, and average precision reached 0.727, compared with 0.196 expected from random ordering. Taselisib had five same-annotation references among 47, yet its nearest reference carried a different annotation. These cases show why the identity and size of each query’s reference set matter. [Query rows](results/retrieval_queries.csv) · [Interactive query explorer](docs/query-explorer.md)
 
 ## Practical use and limitations
 
