@@ -28,6 +28,10 @@ Only training compound profiles determine which features pass missingness and va
 
 Models remain fitted on training data; no refit uses validation or test labels. A prior-only classifier supplies a baseline. No neural network is fitted because class support is small.
 
+### Layout-only diagnostic
+
+The layout diagnostic joins the recorded group assignments to the compound audit. It encodes each observed plate map and well position as a separate indicator and fits a logistic regression with C = 1 on the 48 training groups. An unseen category contributes zero to the corresponding prediction. It scores the 14 test groups and checks that the frozen comparison models used those same groups and annotations. This measures the predictive value of the recorded layout categories on this split. [Scores and class counts](../examples/layout-baseline/scores.json) · [Comparison chart](../examples/layout-baseline/comparison.png)
+
 ## Retrieval and denominators
 
 Each test group queries the training gallery. The analysis removes its own InChIKey14 and every reference sharing any of its plate maps. If no reference or no same-label reference remains, it marks the query ineligible and keeps the exclusions in place.
