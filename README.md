@@ -33,6 +33,16 @@ python -m unittest discover -s tests -v
 
 The optional `python scripts/fetch_snapshot.py --output /tmp/new-profiles.csv.gz` rebuilds the compact input from content-addressed public profiles. It downloads about 136 raw plate files; normal analysis does not require that download. It refuses to overwrite an existing output.
 
+## How much can plate layout predict on its own?
+
+Thirteen of the 14 test groups share a plate map with a training group. To measure the signal available from layout, a separate logistic regression uses only plate map and well position. It learns the category vocabulary on the 48 training groups, ignores unseen categories, and uses a fixed regularization setting (C = 1). The comparison scores the same 14 groups for all four models.
+
+![Macro F1 on 14 groups, prior 0.050, layout only 0.095, morphology logistic 0.496 and morphology forest 0.490](examples/layout-baseline/comparison.png)
+
+The layout model correctly classified **1 of 14 groups**, compared with 3 for the prior and 7 for morphology logistic regression. Macro F1 weights each of the seven classes equally. This diagnostic measures one type of layout signal on a small panel. Batch effects can also enter through the measured cell features.
+
+Run `python -m morphology.layout_baseline --output reproduced-results/layout` to reproduce the chart from the frozen assignments and group audit. The [score table](examples/layout-baseline/scores.json) includes class denominators.
+
 ## Example results
 
 The fixed split has **48 training, 14 validation, and 14 test groups**. All 14 test queries retain a positive training reference after excluding the same compound identity and every shared plate map.
